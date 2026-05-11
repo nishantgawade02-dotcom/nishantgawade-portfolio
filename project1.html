@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Consumer Behaviour &amp; Audience Segmentation — Nishant Gawade</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav project-nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-back">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="m15 18-6-6 6-6"/>
+        </svg>
+        Back to Portfolio
+      </a>
+      <a href="index.html" class="nav-logo">NG</a>
+    </div>
+  </nav>
+
+  <!-- PROJECT HERO -->
+  <div class="project-hero">
+    <div class="project-hero-inner">
+      <div class="project-meta">
+        <span class="project-category-badge">Behavioural Analytics · Dissertation</span>
+        <span class="project-date">Apr 2025 – Aug 2025</span>
+      </div>
+      <h1>Consumer Behaviour &amp; Audience Segmentation</h1>
+      <p class="project-institution">University of Leeds · Grade: Distinction</p>
+    </div>
+  </div>
+
+  <!-- CONTENT -->
+  <div class="project-content">
+
+    <div class="content-section animate-on-scroll">
+      <h2>Overview</h2>
+      <p>A full empirical research project investigating how watching Valorant esports influences player engagement and in-game spending behaviour. Primary survey data was collected from 72 active players and analysed using advanced statistical methods in Python.</p>
+    </div>
+
+    <div class="content-section animate-on-scroll">
+      <h2>The Business Question</h2>
+      <p>Do esports viewers spend more money in-game than non-viewers? And if so, why? This question has direct implications for how gaming companies like Riot Games allocate their marketing budgets across content, influencers, and reward systems.</p>
+    </div>
+
+    <div class="content-section animate-on-scroll">
+      <h2>Methodology</h2>
+      <ul class="methodology-list">
+        <li>72 active Valorant players and spectators surveyed via Qualtrics</li>
+        <li>Data collected from Reddit, Discord, and Twitter communities</li>
+        <li>Behavioural and attitudinal data cleaned, coded, and prepared in Python</li>
+        <li>Statistical methods: OLS regression, ordinal logistic regression, EFA, mediation analysis, moderation analysis, K-means clustering</li>
+      </ul>
+    </div>
+
+    <div class="content-section">
+      <h2 class="animate-on-scroll">Key Findings</h2>
+      <div class="findings-grid">
+        <div class="finding-card animate-on-scroll stagger-1">
+          <span class="finding-number">Finding 01</span>
+          <p class="finding-text">Spectating significantly increases weekly play hours</p>
+          <p class="finding-subtext">Engagement effect confirmed via regression analysis</p>
+        </div>
+        <div class="finding-card animate-on-scroll stagger-2">
+          <span class="finding-number">Finding 02</span>
+          <p class="finding-text">No direct link between spectating and in-game spending</p>
+          <p class="finding-subtext">Contrary to prevailing industry assumption</p>
+        </div>
+        <div class="finding-card animate-on-scroll stagger-3">
+          <span class="finding-number">Finding 03</span>
+          <p class="finding-text">Twitch drops and parasocial attachment show minimal influence on spending</p>
+          <p class="finding-subtext">Both factors statistically non-significant</p>
+        </div>
+        <div class="finding-card animate-on-scroll stagger-4">
+          <span class="finding-number">Finding 04</span>
+          <p class="finding-text">3 distinct audience segments identified via K-means clustering</p>
+          <p class="finding-subtext">Mixed Users · Engaged Spectators · Hardcore Gamers</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section animate-on-scroll">
+      <h2>The Data</h2>
+      <div class="chart-container">
+        <img src="project1_visuals/01_scatterplot_spectating_vs_play.png" alt="Spectating hours vs play hours scatterplot — r=0.284, p=0.029">
+        <p class="chart-caption">Spectating Hours vs Play Hours (n=59) — Pearson r = 0.284, p = 0.029. A statistically significant positive relationship: more spectating correlates with more weekly play time, confirming the engagement effect.</p>
+      </div>
+    </div>
+
+    <div class="content-section">
+      <h2 class="animate-on-scroll">Audience Segments</h2>
+      <div class="segments-grid">
+        <div class="segment-card animate-on-scroll stagger-1">
+          <div class="segment-name">Mixed Users</div>
+          <p class="segment-desc">Casual players who both play and watch esports. Moderate engagement across both activities, low in-game spending.</p>
+        </div>
+        <div class="segment-card animate-on-scroll stagger-2">
+          <div class="segment-name">Engaged Spectators</div>
+          <p class="segment-desc">High watch time, moderate play hours. Engagement-driven but not spend-driven — content consumes their time, not their wallet.</p>
+        </div>
+        <div class="segment-card animate-on-scroll stagger-3">
+          <div class="segment-name">Hardcore Gamers</div>
+          <p class="segment-desc">High play hours, low watch time. The highest in-game spenders — driven by play experience, not spectator content.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section animate-on-scroll">
+      <h2>Business Implications</h2>
+      <p>For Riot Games and esports marketers, this finding suggests that spectating content is valuable for retention and engagement — but should not be relied upon as a direct monetisation lever. Marketing spend on Twitch drops and influencer campaigns may be better reallocated toward in-game reward systems and personalised offers targeting high-spend segments.</p>
+    </div>
+
+    <div class="content-section animate-on-scroll">
+      <h2>Tools Used</h2>
+      <div class="tools-list">
+        <span class="tool-tag">Python</span>
+        <span class="tool-tag">Pandas</span>
+        <span class="tool-tag">Statsmodels</span>
+        <span class="tool-tag">Scikit-learn</span>
+        <span class="tool-tag">Matplotlib</span>
+        <span class="tool-tag">Qualtrics</span>
+        <span class="tool-tag">Excel</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- BACK -->
+  <div class="back-section">
+    <a href="index.html" class="btn-back">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="m15 18-6-6 6-6"/>
+      </svg>
+      Back to Portfolio
+    </a>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p class="footer-text">Nishant Gawade · Graduate Data Analyst · Leeds, UK · 2025</p>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1, rootMargin: '0px 0px -48px 0px' });
+    document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(open /Users/nishantgawade/Desktop/resume/nishant-gawade-portfolio/index.html)",
+      "Bash(ls /Users/nishantgawade/Desktop/resume/nishant-gawade-portfolio/ && ls /Users/nishantgawade/Desktop/resume/)",
+      "Read(//Users/nishantgawade/Desktop/resume/**)",
+      "Bash(open /Users/nishantgawade/Desktop/resume/nishant-gawade-portfolio/project4.html)"
+    ]
+  }
+}

@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nishant Gawade — Graduate Data Analyst</title>
+  <meta name="description" content="Graduate Data Analyst specialising in Power BI, SQL, Python, and Machine Learning. Based in Leeds, UK." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="navbar">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">NG</a>
+      <ul class="nav-links">
+        <li><a href="#about"      data-section="about">About</a></li>
+        <li><a href="#education"  data-section="education">Education</a></li>
+        <li><a href="#projects"   data-section="projects">Projects</a></li>
+        <li><a href="#experience" data-section="experience">Experience</a></li>
+        <li><a href="#skills"     data-section="skills">Skills</a></li>
+        <li><a href="#contact"    data-section="contact">Contact</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="nav-mobile" id="navMobile">
+    <a href="#about"      onclick="closeMenu()">About</a>
+    <a href="#education"  onclick="closeMenu()">Education</a>
+    <a href="#projects"   onclick="closeMenu()">Projects</a>
+    <a href="#experience" onclick="closeMenu()">Experience</a>
+    <a href="#skills"     onclick="closeMenu()">Skills</a>
+    <a href="#contact"    onclick="closeMenu()">Contact</a>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-inner">
+      <div class="hero-content">
+        <span class="availability-badge">Open to Roles · UK · 2025</span>
+        <h1 class="hero-title">Turning data<br>into decisions.</h1>
+        <p class="hero-subtitle">Graduate Data Analyst — Power BI · SQL · Python · Machine Learning</p>
+        <div class="hero-ctas">
+          <a href="#projects" class="btn-primary">View My Work</a>
+          <a href="Nishant_Junior_dataanalyst.pdf" download class="btn-secondary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+              <polyline points="7 10 12 15 17 10"/>
+              <line x1="12" y1="15" x2="12" y2="3"/>
+            </svg>
+            Download Resume
+          </a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="photo-circle">
+          <img src="IMG_5958.jpeg" alt="Nishant Gawade">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="about-inner">
+      <div class="section-header animate-on-scroll">
+        <span class="section-label">About</span>
+        <h2>I build clarity out of complexity.</h2>
+      </div>
+      <div class="about-text animate-on-scroll">
+        <p>I'm a Graduate Data Analyst with an MSc in Business Analytics &amp; Decision Sciences from the University of Leeds (Merit, Dissertation: Distinction) and 2.5 years of hands-on analytics experience at Venus Tours, where I built dashboards, analysed campaigns, and delivered insights that moved real business metrics.</p>
+        <p>I work across the full analytics stack — from raw data cleaning and SQL querying to machine learning pipelines and interactive Power BI dashboards. I'm based in Leeds and open to graduate Data Analyst roles across the UK.</p>
+      </div>
+      <div class="stats-grid">
+        <div class="stat-card animate-on-scroll stagger-1">
+          <span class="stat-number" id="c-years">2.5 Yrs</span>
+          <span class="stat-label">Experience</span>
+        </div>
+        <div class="stat-card animate-on-scroll stagger-2">
+          <span class="stat-number" id="c-projects">4</span>
+          <span class="stat-label">Analytics Projects</span>
+        </div>
+        <div class="stat-card animate-on-scroll stagger-3">
+          <span class="stat-number">MSc</span>
+          <span class="stat-label">Merit</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section class="education" id="education">
+    <div class="education-inner">
+      <div class="section-header animate-on-scroll">
+        <span class="section-label">Education</span>
+        <h2>The foundation.</h2>
+      </div>
+      <div class="edu-card animate-on-scroll">
+        <div class="edu-row">
+          <div>
+            <div class="edu-degree">MSc Business Analytics &amp; Decision Sciences</div>
+            <div class="edu-institution">University of Leeds · Leeds, UK</div>
+            <div class="edu-dissertation">Dissertation: "The influence of Valorant esports spectating on player engagement and in-game spending behaviour"</div>
+            <div class="edu-tags">
+              <span class="edu-tag highlight">Dissertation: Distinction</span>
+              <span class="edu-tag">Merit</span>
+            </div>
+          </div>
+          <span class="edu-duration">Sep 2024 – Sep 2025</span>
+        </div>
+        <div class="edu-row">
+          <div>
+            <div class="edu-degree">B.E. Information Technology</div>
+            <div class="edu-institution">University of Mumbai · Mumbai, India</div>
+            <div class="edu-tags">
+              <span class="edu-tag">Engineering</span>
+            </div>
+          </div>
+          <span class="edu-duration">Feb 2021 – Aug 2024</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="projects" id="projects">
+    <div class="projects-inner">
+      <div class="section-header animate-on-scroll">
+        <span class="section-label">Projects</span>
+        <h2>Work that speaks for itself.</h2>
+      </div>
+      <div class="projects-grid">
+        <a href="project1.html" class="project-card featured animate-on-scroll stagger-1">
+          <span class="project-number">01</span>
+          <h3 class="project-title">Consumer Behaviour &amp; Audience Segmentation</h3>
+          <span class="project-category">Behavioural Analytics · Dissertation</span>
+          <div class="featured-meta">
+            <span class="featured-badge">Distinction</span>
+            <span class="featured-badge-sub">University of Leeds · 2025</span>
+          </div>
+          <span class="project-link">View Project →</span>
+        </a>
+        <a href="project2.html" class="project-card animate-on-scroll stagger-2">
+          <span class="project-number">02</span>
+          <h3 class="project-title">ICO Fundraising Success Prediction</h3>
+          <span class="project-category">Machine Learning</span>
+          <span class="project-link">View Project →</span>
+        </a>
+        <a href="project3.html" class="project-card animate-on-scroll stagger-3">
+          <span class="project-number">03</span>
+          <h3 class="project-title">US Economic Demand Forecasting</h3>
+          <span class="project-category">Forecasting</span>
+          <span class="project-link">View Project →</span>
+        </a>
+        <a href="project4.html" class="project-card animate-on-scroll stagger-4">
+          <span class="project-number">04</span>
+          <h3 class="project-title">Hotel Review Text Mining &amp; Sentiment Analysis</h3>
+          <span class="project-category">NLP · Text Analytics</span>
+          <span class="project-link">View Project →</span>
+        </a>
+      </div>
+      <div class="skills-legend animate-on-scroll">
+        <div class="legend-item">
+          <span class="legend-dot core">Power BI</span>
+          Core skill
+        </div>
+        <div class="legend-item">
+          <span class="legend-dot familiar">Tableau</span>
+          Familiar
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section class="experience" id="experience">
+    <div class="experience-inner">
+      <div class="section-header animate-on-scroll">
+        <span class="section-label">Experience</span>
+        <h2>Real work. Real impact.</h2>
+      </div>
+      <div class="experience-card animate-on-scroll">
+        <div class="exp-header">
+          <div>
+            <div class="exp-role">Data Analyst</div>
+            <div class="exp-company">Venus Tours · Mumbai, India</div>
+          </div>
+          <div>
+            <span class="exp-duration">Jan 2021 – Jul 2023 · Part-time</span>
+          </div>
+        </div>
+        <ul class="exp-bullets">
+          <li class="exp-bullet">Engineered Power BI dashboards using DAX measures to track KPIs across 15+ marketing campaigns, cutting monthly reporting time by 20%</li>
+          <li class="exp-bullet">Analysed customer engagement and campaign performance in Excel and Power BI, improving client reach by 28%</li>
+          <li class="exp-bullet">Consolidated and cleaned multi-source datasets across social media platforms and survey tools, improving reporting accuracy across all campaigns</li>
+          <li class="exp-bullet">Modelled customer behaviour and satisfaction data to inform event personalisation strategies, raising satisfaction scores by 25%</li>
+          <li class="exp-bullet">Worked within a 5-person team to align data insights with communication strategy, increasing online visibility by 35%</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="skills" id="skills">
+    <div class="skills-inner">
+      <div class="section-header animate-on-scroll">
+        <span class="section-label">Skills</span>
+        <h2>The full stack.</h2>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-card animate-on-scroll stagger-1">
+          <div class="skill-category">BI &amp; Dashboarding</div>
+          <div class="skill-tags">
+            <span class="skill-tag">Power BI</span>
+            <span class="skill-tag">DAX</span>
+            <span class="skill-tag">Excel (Advanced)</span>
+            <span class="skill-tag">Power Query</span>
+            <span class="skill-tag familiar">Tableau</span>
+          </div>
+        </div>
+        <div class="skill-card animate-on-scroll stagger-2">
+          <div class="skill-category">Programming</div>
+          <div class="skill-tags">
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">Pandas</span>
+            <span class="skill-tag">Scikit-learn</span>
+            <span class="skill-tag">Statsmodels</span>
+            <span class="skill-tag">R</span>
+            <span class="skill-tag familiar">tidyverse</span>
+            <span class="skill-tag familiar">caret</span>
+            <span class="skill-tag">ggplot2</span>
+          </div>
+        </div>
+        <div class="skill-card animate-on-scroll stagger-3">
+          <div class="skill-category">Data &amp; Databases</div>
+          <div class="skill-tags">
+            <span class="skill-tag">SQL</span>
+            <span class="skill-tag">Data Cleaning</span>
+            <span class="skill-tag">Feature Engineering</span>
+            <span class="skill-tag">EDA</span>
+            <span class="skill-tag">Data Validation</span>
+          </div>
+        </div>
+        <div class="skill-card animate-on-scroll stagger-4">
+          <div class="skill-category">Statistical &amp; ML</div>
+          <div class="skill-tags">
+            <span class="skill-tag">ARIMA Forecasting</span>
+            <span class="skill-tag">Regression Analysis</span>
+            <span class="skill-tag">K-means Clustering</span>
+            <span class="skill-tag">XGBoost</span>
+            <span class="skill-tag">NLP</span>
+            <span class="skill-tag">Sentiment Analysis</span>
+            <span class="skill-tag familiar">EFA</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="contact-inner">
+      <span class="section-label">Contact</span>
+      <h2>Let's work together.</h2>
+      <p class="contact-subtext">Open to graduate Data Analyst roles across the UK.</p>
+      <div class="contact-buttons">
+        <a href="mailto:nishantgawade02@gmail.com" class="contact-btn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="4" width="20" height="16" rx="2"/>
+            <path d="m2 7 10 7 10-7"/>
+          </svg>
+          nishantgawade02@gmail.com
+        </a>
+        <a href="https://www.linkedin.com/in/nishant-gawade-31b04924a/" target="_blank" rel="noopener" class="contact-btn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+            <rect x="2" y="9" width="4" height="12"/>
+            <circle cx="4" cy="4" r="2"/>
+          </svg>
+          LinkedIn
+        </a>
+        <span class="contact-btn" style="cursor:default;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0Z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
+          Leeds, UK
+        </span>
+      </div>
+      <div class="resume-download-section animate-on-scroll">
+        <a href="Nishant_Junior_dataanalyst.pdf" download class="btn-download">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+            <polyline points="7 10 12 15 17 10"/>
+            <line x1="12" y1="15" x2="12" y2="3"/>
+          </svg>
+          Download My Resume
+        </a>
+        <p class="resume-meta">Data Analyst CV · PDF · Updated 2025</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p class="footer-text">Nishant Gawade · Graduate Data Analyst · Leeds, UK · 2025</p>
+  </footer>
+
+  <script>
+    /* ---- Frosted nav on scroll ---- */
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 20);
+    }, { passive: true });
+
+    /* ---- Mobile menu ---- */
+    const navToggle = document.getElementById('navToggle');
+    const navMobile = document.getElementById('navMobile');
+    navToggle.addEventListener('click', () => {
+      navToggle.classList.toggle('open');
+      navMobile.classList.toggle('open');
+    });
+    function closeMenu() {
+      navToggle.classList.remove('open');
+      navMobile.classList.remove('open');
+    }
+
+    /* ---- Scroll animations ---- */
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1, rootMargin: '0px 0px -48px 0px' });
+    document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+
+    /* ---- Animated stat counters ---- */
+    function animateCounter(el, target, duration, decimals, suffix) {
+      const start = performance.now();
+      const tick = (now) => {
+        const p = Math.min((now - start) / duration, 1);
+        const eased = 1 - Math.pow(1 - p, 3);
+        const val = eased * target;
+        el.textContent = (decimals ? val.toFixed(1) : Math.floor(val)) + (suffix || '');
+        if (p < 1) requestAnimationFrame(tick);
+        else el.textContent = (decimals ? target.toFixed(1) : target) + (suffix || '');
+      };
+      requestAnimationFrame(tick);
+    }
+    let countersFired = false;
+    const statsGrid = document.querySelector('.stats-grid');
+    if (statsGrid) {
+      const counterObs = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting && !countersFired) {
+          countersFired = true;
+          setTimeout(() => animateCounter(document.getElementById('c-years'), 2.5, 1300, true, ' Yrs'), 0);
+          setTimeout(() => animateCounter(document.getElementById('c-projects'), 4, 900, false, ''), 160);
+          counterObs.disconnect();
+        }
+      }, { threshold: 0.5 });
+      counterObs.observe(statsGrid);
+    }
+
+    /* ---- Active nav link on scroll ---- */
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-links a[data-section]');
+    const sectionObs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          navLinks.forEach(l => {
+            l.classList.toggle('active', l.dataset.section === e.target.id);
+          });
+        }
+      });
+    }, { threshold: 0.45 });
+    sections.forEach(s => sectionObs.observe(s));
+  </script>
+</body>
+</html>

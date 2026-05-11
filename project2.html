@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ICO Fundraising Success Prediction — Nishant Gawade</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav project-nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-back">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="m15 18-6-6 6-6"/>
+        </svg>
+        Back to Portfolio
+      </a>
+      <a href="index.html" class="nav-logo">NG</a>
+    </div>
+  </nav>
+
+  <!-- PROJECT HERO -->
+  <div class="project-hero">
+    <div class="project-hero-inner">
+      <div class="project-meta">
+        <span class="project-category-badge">Machine Learning · Classification</span>
+        <span class="project-date">Feb 2025 – May 2025</span>
+      </div>
+      <h1>ICO Fundraising Success Prediction</h1>
+      <p class="project-institution">University of Leeds</p>
+    </div>
+  </div>
+
+  <!-- CONTENT -->
+  <div class="project-content">
+
+    <div class="content-section animate-on-scroll">
+      <h2>Overview</h2>
+      <p>A machine learning project predicting the fundraising success of 6,146 Initial Coin Offerings (ICOs) using historical blockchain project data. The goal was to identify which project characteristics most reliably predict whether an ICO will hit its funding target.</p>
+    </div>
+
+    <div class="content-section animate-on-scroll">
+      <h2>The Business Question</h2>
+      <p>With thousands of ICOs launching annually and high failure rates, investors and regulators need reliable signals to assess project viability early. This project built a predictive screening tool using historical data to surface the strongest success indicators.</p>
+    </div>
+
+    <div class="content-section animate-on-scroll">
+      <h2>Methodology</h2>
+      <ul class="methodology-list">
+        <li>Dataset: 6,146 ICO projects with 24 features</li>
+        <li>Data cleaning: missing values, outliers, skewed distributions, variable encoding</li>
+        <li>Feature engineering: ICO duration, binary success labels, platform indicators, log-transformed price variables</li>
+        <li>EDA: patterns in team size, investment requirements, whitepaper presence, geographic distributions</li>
+        <li>Models built: Logistic Regression, SVM (RBF kernel), Random Forest, XGBoost</li>
+        <li>Evaluation: 5-fold cross-validation, AUC, Accuracy</li>
+      </ul>
+    </div>
+
+    <div class="content-section animate-on-scroll">
+      <h2>Model Performance</h2>
+      <div class="table-wrap">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Model</th>
+              <th>Accuracy</th>
+              <th>AUC</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Logistic Regression</td>
+              <td>63.2%</td>
+              <td>0.66</td>
+            </tr>
+            <tr>
+              <td>SVM (RBF)</td>
+              <td>64.1%</td>
+              <td>0.67</td>
+            </tr>
+            <tr>
+              <td>Random Forest</td>
+              <td>65.9%</td>
+              <td>0.69</td>
+            </tr>
+            <tr>
+              <td>XGBoost<span class="best-badge">Best</span></td>
+              <td>67.8%</td>
+              <td>0.71</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="content-section animate-on-scroll">
+      <h2>The Data</h2>
+      <div class="chart-container">
+        <img src="project2_visuals/Picture 1.png" alt="ROC Curve comparison across all 4 classification models">
+        <p class="chart-caption">ROC Curve Comparison — XGBoost (AUC: 0.709) leads all models, followed by Random Forest (0.699), Logistic Regression (0.693), and SVM Radial (0.683). Evaluated on 6,146 ICO projects via 5-fold cross-validation.</p>
+      </div>
+    </div>
+
+    <div class="content-section">
+      <h2 class="animate-on-scroll">Key Findings</h2>
+      <div class="findings-grid">
+        <div class="finding-card animate-on-scroll stagger-1">
+          <span class="finding-number">Finding 01</span>
+          <p class="finding-text">XGBoost achieved AUC 0.71 — best performing model across all metrics</p>
+          <p class="finding-subtext">Outperformed all baseline and ensemble alternatives</p>
+        </div>
+        <div class="finding-card animate-on-scroll stagger-2">
+          <span class="finding-number">Finding 02</span>
+          <p class="finding-text">Top predictor: Project rating — strongest single signal of ICO success</p>
+          <p class="finding-subtext">Highest feature importance score across all models</p>
+        </div>
+        <div class="finding-card animate-on-scroll stagger-3">
+          <span class="finding-number">Finding 03</span>
+          <p class="finding-text">Team size, ICO duration, and token price are the next most predictive features</p>
+          <p class="finding-subtext">Structural project factors outweigh marketing signals</p>
+        </div>
+        <div class="finding-card animate-on-scroll stagger-4">
+          <span class="finding-number">Finding 04</span>
+          <p class="finding-text">Whitepaper presence and GitHub activity signal project credibility</p>
+          <p class="finding-subtext">Transparency and technical activity correlate with funding success</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section animate-on-scroll">
+      <h2>Business Implications</h2>
+      <p>These findings provide a practical screening framework for early-stage crypto investment. A project with a high rating, experienced team, reasonable duration, and active GitHub presence is significantly more likely to hit its funding target. Regulators could use similar models to flag high-risk offerings proactively before they reach the market.</p>
+    </div>
+
+    <div class="content-section animate-on-scroll">
+      <h2>Tools Used</h2>
+      <div class="tools-list">
+        <span class="tool-tag">R</span>
+        <span class="tool-tag">caret</span>
+        <span class="tool-tag">tidyverse</span>
+        <span class="tool-tag">ggplot2</span>
+        <span class="tool-tag">xgboost</span>
+        <span class="tool-tag">Excel</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- BACK -->
+  <div class="back-section">
+    <a href="index.html" class="btn-back">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="m15 18-6-6 6-6"/>
+      </svg>
+      Back to Portfolio
+    </a>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p class="footer-text">Nishant Gawade · Graduate Data Analyst · Leeds, UK · 2025</p>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1, rootMargin: '0px 0px -48px 0px' });
+    document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>

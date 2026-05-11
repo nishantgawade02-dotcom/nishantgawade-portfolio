@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hotel Review Text Mining &amp; Sentiment Analysis — Nishant Gawade</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav project-nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-back">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="m15 18-6-6 6-6"/>
+        </svg>
+        Back to Portfolio
+      </a>
+      <a href="index.html" class="nav-logo">NG</a>
+    </div>
+  </nav>
+
+  <!-- PROJECT HERO -->
+  <div class="project-hero">
+    <div class="project-hero-inner">
+      <div class="project-meta">
+        <span class="project-category-badge">NLP · Text Analytics</span>
+        <span class="project-date">Jan 2025 – Apr 2025</span>
+      </div>
+      <h1>Hotel Review Text Mining &amp; Sentiment Analysis</h1>
+      <p class="project-institution">University of Leeds</p>
+    </div>
+  </div>
+
+  <!-- CONTENT -->
+  <div class="project-content">
+
+    <div class="content-section animate-on-scroll">
+      <h2>Overview</h2>
+      <p>An NLP project extracting customer experience themes and satisfaction drivers from 2,000+ unstructured hotel reviews. The goal was to turn raw text into structured, prioritised insight that hotel management could act on directly.</p>
+    </div>
+
+    <div class="content-section animate-on-scroll">
+      <h2>The Business Question</h2>
+      <p>Hotels receive thousands of reviews but rarely have the tools to systematically analyse what customers are actually saying. Which service areas generate the most negative sentiment? Where should management invest to move the needle on ratings?</p>
+    </div>
+
+    <div class="content-section animate-on-scroll">
+      <h2>Methodology</h2>
+      <ul class="methodology-list">
+        <li>Dataset: 2,000+ unstructured hotel customer reviews</li>
+        <li>Text preprocessing pipeline: tokenisation, stop-word removal, stemming, cleanup</li>
+        <li>TF-IDF weighting to surface high-signal terms across the corpus</li>
+        <li>LDA topic modelling to identify recurring themes and sentiment clusters</li>
+        <li>Sentiment analysis to score and classify individual reviews</li>
+        <li>Output: prioritised insight report with ranked improvement recommendations</li>
+      </ul>
+    </div>
+
+    <div class="content-section">
+      <h2 class="animate-on-scroll">Key Findings</h2>
+      <div class="findings-grid">
+        <div class="finding-card animate-on-scroll stagger-1">
+          <span class="finding-number">Finding 01</span>
+          <p class="finding-text">Staff responsiveness is the #1 driver of negative reviews</p>
+          <p class="finding-subtext">Highest negative sentiment weight in the corpus</p>
+        </div>
+        <div class="finding-card animate-on-scroll stagger-2">
+          <span class="finding-number">Finding 02</span>
+          <p class="finding-text">Cleanliness complaints cluster heavily in 1–2 star reviews</p>
+          <p class="finding-subtext">Second highest negative driver after staff sentiment</p>
+        </div>
+        <div class="finding-card animate-on-scroll stagger-3">
+          <span class="finding-number">Finding 03</span>
+          <p class="finding-text">Location and value-for-money consistently appear in positive reviews</p>
+          <p class="finding-subtext">Structural advantages difficult to replicate by competitors</p>
+        </div>
+        <div class="finding-card animate-on-scroll stagger-4">
+          <span class="finding-number">Finding 04</span>
+          <p class="finding-text">5 distinct themes identified via LDA topic modelling</p>
+          <p class="finding-subtext">Staff · Cleanliness · Location · Food · Value</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section">
+      <h2 class="animate-on-scroll">Topic Themes</h2>
+      <div class="themes-grid">
+        <div class="theme-card animate-on-scroll stagger-1">
+          <div class="theme-name">Staff</div>
+          <p class="theme-desc">Responsiveness, attitude, helpfulness. Highest negative sentiment weight — the single biggest lever for improving ratings.</p>
+        </div>
+        <div class="theme-card animate-on-scroll stagger-2">
+          <div class="theme-name">Cleanliness</div>
+          <p class="theme-desc">Room hygiene, bathroom condition. Second highest negative driver — operationally fixable with focused protocols.</p>
+        </div>
+        <div class="theme-card animate-on-scroll stagger-3">
+          <div class="theme-name">Location</div>
+          <p class="theme-desc">Proximity to transport and attractions. Consistently positive — a structural advantage hotels can market more aggressively.</p>
+        </div>
+        <div class="theme-card animate-on-scroll stagger-4">
+          <div class="theme-name">Food &amp; Breakfast</div>
+          <p class="theme-desc">Quality and variety of food offering. Mixed sentiment — positive in budget properties, negative in higher-end segments.</p>
+        </div>
+        <div class="theme-card animate-on-scroll stagger-5">
+          <div class="theme-name">Value</div>
+          <p class="theme-desc">Price-to-quality ratio. Positive in budget segment; negative in luxury — expectations gap is the core driver of dissatisfaction.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section animate-on-scroll">
+      <h2>The Data</h2>
+      <div class="chart-container">
+        <img src="project4_visuals/graph neg.png" alt="Top 25 negative words by TF-IDF score from hotel reviews">
+        <p class="chart-caption">Top 25 Negative Words by TF-IDF Score — extracted from 2,000+ hotel reviews. High-weight terms like "stink", "mold", and "bug" directly point to cleanliness and maintenance as the dominant sources of guest dissatisfaction.</p>
+      </div>
+    </div>
+
+    <div class="content-section animate-on-scroll">
+      <h2>Business Implications</h2>
+      <p>Hotel management should prioritise staff training and room cleanliness protocols — these two factors disproportionately drive poor reviews and are both operationally fixable. Location and value are harder to change; the highest ROI improvements lie in staff responsiveness and cleanliness. A targeted staff training programme and strengthened housekeeping checklist would address the two largest negative sentiment drivers identified by the model.</p>
+    </div>
+
+    <div class="content-section animate-on-scroll">
+      <h2>Tools Used</h2>
+      <div class="tools-list">
+        <span class="tool-tag">R</span>
+        <span class="tool-tag">tidytext</span>
+        <span class="tool-tag">topicmodels</span>
+        <span class="tool-tag">ggplot2</span>
+        <span class="tool-tag">wordcloud</span>
+        <span class="tool-tag">Excel</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- BACK -->
+  <div class="back-section">
+    <a href="index.html" class="btn-back">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="m15 18-6-6 6-6"/>
+      </svg>
+      Back to Portfolio
+    </a>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p class="footer-text">Nishant Gawade · Graduate Data Analyst · Leeds, UK · 2025</p>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1, rootMargin: '0px 0px -48px 0px' });
+    document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>

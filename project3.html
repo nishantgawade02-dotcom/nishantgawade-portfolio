@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>US Economic Demand Forecasting — Nishant Gawade</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav project-nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-back">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="m15 18-6-6 6-6"/>
+        </svg>
+        Back to Portfolio
+      </a>
+      <a href="index.html" class="nav-logo">NG</a>
+    </div>
+  </nav>
+
+  <!-- PROJECT HERO -->
+  <div class="project-hero">
+    <div class="project-hero-inner">
+      <div class="project-meta">
+        <span class="project-category-badge">Time Series · Forecasting</span>
+        <span class="project-date">Jan 2025 – Apr 2025</span>
+      </div>
+      <h1>US Economic Demand Forecasting</h1>
+      <p class="project-institution">University of Leeds</p>
+    </div>
+  </div>
+
+  <!-- CONTENT -->
+  <div class="project-content">
+
+    <div class="content-section animate-on-scroll">
+      <h2>Overview</h2>
+      <p>A time-series forecasting project modelling monthly US Personal Consumption Expenditures (PCE) to produce a statistically validated 12-month economic demand outlook. Multiple forecasting models were built, compared, and the best-performing configuration selected for the final forecast.</p>
+    </div>
+
+    <div class="content-section animate-on-scroll">
+      <h2>The Business Question</h2>
+      <p>Personal Consumption Expenditures account for roughly 70% of US GDP. Accurate short-term forecasting of PCE enables businesses and policymakers to make better decisions on inventory, staffing, and resource allocation. This project asked: which forecasting approach most reliably predicts near-term consumption trends?</p>
+    </div>
+
+    <div class="content-section animate-on-scroll">
+      <h2>Methodology</h2>
+      <ul class="methodology-list">
+        <li>Data: seasonally adjusted monthly US PCE series</li>
+        <li>Models built: ARIMA, Exponential Smoothing (ETS), Naive baseline, Drift baseline</li>
+        <li>Model selection criteria: MAE and RMSE measured on a held-out test period</li>
+        <li>Final model: ARIMA(5,1,2) — selected for lowest error metrics across both measures</li>
+        <li>Output: 12-month forward forecast with 80% and 95% confidence intervals</li>
+        <li>Visualisation: interactive Power BI dashboard built for non-technical stakeholders</li>
+      </ul>
+    </div>
+
+    <div class="content-section animate-on-scroll">
+      <h2>Model Comparison</h2>
+      <div class="table-wrap">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Model</th>
+              <th>MAE</th>
+              <th>RMSE</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Naive Baseline</td>
+              <td>High</td>
+              <td>High</td>
+            </tr>
+            <tr>
+              <td>Drift Baseline</td>
+              <td>Medium</td>
+              <td>Medium</td>
+            </tr>
+            <tr>
+              <td>ETS</td>
+              <td>Medium</td>
+              <td>Medium</td>
+            </tr>
+            <tr>
+              <td>ARIMA(5,1,2)<span class="best-badge">Selected</span></td>
+              <td>Lowest</td>
+              <td>Lowest</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="content-section">
+      <h2 class="animate-on-scroll">Key Findings</h2>
+      <div class="findings-grid">
+        <div class="finding-card animate-on-scroll stagger-1">
+          <span class="finding-number">Finding 01</span>
+          <p class="finding-text">ARIMA(5,1,2) outperformed all baseline and ETS models on both MAE and RMSE</p>
+          <p class="finding-subtext">Clear winner across every error metric</p>
+        </div>
+        <div class="finding-card animate-on-scroll stagger-2">
+          <span class="finding-number">Finding 02</span>
+          <p class="finding-text">US PCE follows predictable seasonal patterns captured by the model</p>
+          <p class="finding-subtext">Both trend and seasonality components modelled successfully</p>
+        </div>
+        <div class="finding-card animate-on-scroll stagger-3">
+          <span class="finding-number">Finding 03</span>
+          <p class="finding-text">12-month forecast produced with confidence intervals for planning reliability</p>
+          <p class="finding-subtext">80% and 95% prediction bands included</p>
+        </div>
+        <div class="finding-card animate-on-scroll stagger-4">
+          <span class="finding-number">Finding 04</span>
+          <p class="finding-text">Power BI dashboard built for non-technical stakeholders to explore the forecast</p>
+          <p class="finding-subtext">Interactive time-series view with scenario filters</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section animate-on-scroll">
+      <h2>The Data</h2>
+      <div class="chart-container">
+        <img src="project3_visuals/final forecast.png" alt="ARIMA(5,1,2) 12-month PCE forecast with confidence interval">
+        <p class="chart-caption">Final Forecast of US PCE using ARIMA(5,1,2) trained on full data — blue line shows the 12-month ahead forecast, pink band shows the forecast confidence interval. Historical data spans 1960–present (PCE in Billions USD).</p>
+      </div>
+    </div>
+
+    <div class="content-section animate-on-scroll">
+      <h2>Business Implications</h2>
+      <p>The final ARIMA(5,1,2) model provides a reliable near-term planning tool for demand forecasting. Businesses in consumer-facing sectors can use PCE forecasts to plan inventory, staffing, and marketing spend 6–12 months in advance with statistically grounded confidence. The Power BI dashboard makes the forecast accessible to non-technical decision-makers without requiring knowledge of the underlying model.</p>
+    </div>
+
+    <div class="content-section animate-on-scroll">
+      <h2>Tools Used</h2>
+      <div class="tools-list">
+        <span class="tool-tag">R</span>
+        <span class="tool-tag">forecast</span>
+        <span class="tool-tag">tseries</span>
+        <span class="tool-tag">ggplot2</span>
+        <span class="tool-tag">tidyverse</span>
+        <span class="tool-tag">Power BI</span>
+        <span class="tool-tag">Excel</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- BACK -->
+  <div class="back-section">
+    <a href="index.html" class="btn-back">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="m15 18-6-6 6-6"/>
+      </svg>
+      Back to Portfolio
+    </a>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p class="footer-text">Nishant Gawade · Graduate Data Analyst · Leeds, UK · 2025</p>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1, rootMargin: '0px 0px -48px 0px' });
+    document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
