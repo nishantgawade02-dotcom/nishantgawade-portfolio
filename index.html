@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,8 +9,19 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
+  <script>
+    (function(){var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t);})();
+  </script>
 </head>
 <body>
+
+  <!-- AURORA BACKGROUND -->
+  <div class="aurora" aria-hidden="true">
+    <div class="aurora-blob a1"></div>
+    <div class="aurora-blob a2"></div>
+    <div class="aurora-blob a3"></div>
+    <div class="aurora-blob a4"></div>
+  </div>
 
   <!-- NAV -->
   <nav class="nav" id="navbar">
@@ -21,9 +32,21 @@
         <li><a href="#education"  data-section="education">Education</a></li>
         <li><a href="#projects"   data-section="projects">Projects</a></li>
         <li><a href="#experience" data-section="experience">Experience</a></li>
-        <li><a href="#skills"     data-section="skills">Skills</a></li>
-        <li><a href="#contact"    data-section="contact">Contact</a></li>
+        <li><a href="#skills"          data-section="skills">Skills</a></li>
+        <li><a href="#certifications" data-section="certifications">Certifications</a></li>
+        <li><a href="#contact"        data-section="contact">Contact</a></li>
       </ul>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="4"/><line x1="12" y1="2" x2="12" y2="6"/><line x1="12" y1="18" x2="12" y2="22"/>
+          <line x1="4.93" y1="4.93" x2="7.76" y2="7.76"/><line x1="16.24" y1="16.24" x2="19.07" y2="19.07"/>
+          <line x1="2" y1="12" x2="6" y2="12"/><line x1="18" y1="12" x2="22" y2="12"/>
+          <line x1="4.93" y1="19.07" x2="7.76" y2="16.24"/><line x1="16.24" y1="7.76" x2="19.07" y2="4.93"/>
+        </svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+      </button>
       <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
         <span></span><span></span><span></span>
       </button>
@@ -36,15 +59,16 @@
     <a href="#education"  onclick="closeMenu()">Education</a>
     <a href="#projects"   onclick="closeMenu()">Projects</a>
     <a href="#experience" onclick="closeMenu()">Experience</a>
-    <a href="#skills"     onclick="closeMenu()">Skills</a>
-    <a href="#contact"    onclick="closeMenu()">Contact</a>
+    <a href="#skills"          onclick="closeMenu()">Skills</a>
+    <a href="#certifications" onclick="closeMenu()">Certifications</a>
+    <a href="#contact"        onclick="closeMenu()">Contact</a>
   </div>
 
   <!-- HERO -->
   <section class="hero" id="home">
     <div class="hero-inner">
       <div class="hero-content">
-        <span class="availability-badge">Open to Roles · UK · 2025</span>
+        <span class="availability-badge">Open to Roles · UK · 2026</span>
         <h1 class="hero-title">Turning data<br>into decisions.</h1>
         <p class="hero-subtitle">Graduate Data Analyst — Power BI · SQL · Python · Machine Learning</p>
         <div class="hero-ctas">
@@ -264,6 +288,52 @@
     </div>
   </section>
 
+  <!-- CERTIFICATIONS -->
+  <section class="certifications" id="certifications">
+    <div class="certifications-inner">
+      <div class="section-header animate-on-scroll">
+        <span class="section-label">Certifications</span>
+        <h2>Verified skills.</h2>
+      </div>
+      <div class="cert-grid">
+        <a href="https://www.udemy.com/certificate/UC-83f35fef-5312-4fd4-bad4-61beb0ea4492/"
+           target="_blank" rel="noopener" class="cert-card animate-on-scroll stagger-1">
+          <div class="cert-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z"/>
+            </svg>
+          </div>
+          <div class="cert-body">
+            <div class="cert-name">Microsoft Power BI Desktop for Business Intelligence</div>
+            <div class="cert-issuer">Maven Analytics · Udemy</div>
+          </div>
+          <div class="cert-arrow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M7 17L17 7M7 7h10v10"/>
+            </svg>
+          </div>
+        </a>
+        <a href="https://www.credly.com/badges/13e69a03-3629-4ee7-a66f-413466d05e2e/linked_in_profile"
+           target="_blank" rel="noopener" class="cert-card animate-on-scroll stagger-2">
+          <div class="cert-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/>
+            </svg>
+          </div>
+          <div class="cert-body">
+            <div class="cert-name">Microsoft Office Specialist: Excel Associate (Microsoft 365)</div>
+            <div class="cert-issuer">Microsoft · Credly</div>
+          </div>
+          <div class="cert-arrow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M7 17L17 7M7 7h10v10"/>
+            </svg>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
   <!-- CONTACT -->
   <section class="contact" id="contact">
     <div class="contact-inner">
@@ -314,6 +384,17 @@
   </footer>
 
   <script>
+    /* ---- Theme toggle ---- */
+    const html = document.documentElement;
+    const themeToggle = document.getElementById('themeToggle');
+    const saved = localStorage.getItem('theme') || 'light';
+    html.setAttribute('data-theme', saved);
+    themeToggle.addEventListener('click', () => {
+      const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+    });
+
     /* ---- Frosted nav on scroll ---- */
     const navbar = document.getElementById('navbar');
     window.addEventListener('scroll', () => {
