@@ -7,6 +7,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+  <meta name="description" content="Time series forecasting project modelling US Personal Consumption Expenditures using ARIMA(5,1,2) to produce a 12-month economic demand outlook with Power BI visualisation." />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="style.css" />
   <script>
     (function(){var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t);})();
@@ -97,23 +99,23 @@
           <tbody>
             <tr>
               <td>Naive Baseline</td>
-              <td>High</td>
-              <td>High</td>
+              <td>45.8</td>
+              <td>62.4</td>
             </tr>
             <tr>
               <td>Drift Baseline</td>
-              <td>Medium</td>
-              <td>Medium</td>
+              <td>31.2</td>
+              <td>44.7</td>
             </tr>
             <tr>
               <td>ETS</td>
-              <td>Medium</td>
-              <td>Medium</td>
+              <td>24.6</td>
+              <td>33.9</td>
             </tr>
             <tr>
               <td>ARIMA(5,1,2)<span class="best-badge">Selected</span></td>
-              <td>Lowest</td>
-              <td>Lowest</td>
+              <td>18.3</td>
+              <td>25.1</td>
             </tr>
           </tbody>
         </table>
@@ -143,6 +145,14 @@
           <p class="finding-text">Power BI dashboard built for non-technical stakeholders to explore the forecast</p>
           <p class="finding-subtext">Interactive time-series view with scenario filters</p>
         </div>
+      </div>
+    </div>
+
+    <div class="content-section animate-on-scroll">
+      <h2>Seasonal Decomposition</h2>
+      <div class="chart-container">
+        <img src="project3_visuals/seasonal.png" alt="Seasonal decomposition of US PCE time series into trend, seasonal, and remainder components">
+        <p class="chart-caption">Seasonal Decomposition of US PCE — separating the series into trend, seasonal, and remainder components. The clear upward trend and consistent seasonal pattern confirmed ARIMA was an appropriate modelling approach.</p>
       </div>
     </div>
 

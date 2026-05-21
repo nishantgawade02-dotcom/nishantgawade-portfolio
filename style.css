@@ -656,7 +656,7 @@ section { scroll-margin-top: var(--nav-height); }
 /* ============================================================
    CERTIFICATIONS
 ============================================================ */
-.certifications { background: var(--section-tint); padding: 120px 0; }
+.certifications { background: transparent; padding: 120px 0; }
 .certifications-inner { max-width: 1200px; margin: 0 auto; padding: 0 48px; }
 
 .cert-grid { display: flex; flex-direction: column; gap: 16px; }
