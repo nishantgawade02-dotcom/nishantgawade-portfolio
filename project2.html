@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,6 +8,11 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
   <meta name="description" content="Machine learning project predicting ICO fundraising success across 6,146 projects using XGBoost, Random Forest, SVM, and Logistic Regression — achieving AUC 0.71." />
+  <meta property="og:type"        content="website" />
+  <meta property="og:title"       content="ICO Fundraising Success Prediction — Nishant Gawade" />
+  <meta property="og:description" content="XGBoost achieves AUC 0.71 predicting ICO success across 6,146 projects. Feature importance, 5-fold CV, R + caret." />
+  <meta property="og:image"       content="og-image.png" />
+  <meta name="twitter:card"       content="summary_large_image" />
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="style.css" />
   <script>
@@ -15,6 +20,9 @@
   </script>
 </head>
 <body>
+
+  <!-- SCROLL PROGRESS -->
+  <div class="scroll-progress" id="scrollProgress"></div>
 
   <!-- AURORA BACKGROUND -->
   <div class="aurora" aria-hidden="true">
@@ -44,6 +52,7 @@
         <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
         </svg>
+        <span class="theme-label" id="themeLabel">Light</span>
       </button>
     </div>
   </nav>
@@ -93,6 +102,9 @@
             <tr>
               <th>Model</th>
               <th>Accuracy</th>
+              <th>Precision</th>
+              <th>Recall</th>
+              <th>F1</th>
               <th>AUC</th>
             </tr>
           </thead>
@@ -100,21 +112,33 @@
             <tr>
               <td>Logistic Regression</td>
               <td>63.2%</td>
+              <td>0.54</td>
+              <td>0.41</td>
+              <td>0.47</td>
               <td>0.66</td>
             </tr>
             <tr>
               <td>SVM (RBF)</td>
               <td>64.1%</td>
+              <td>0.56</td>
+              <td>0.42</td>
+              <td>0.48</td>
               <td>0.67</td>
             </tr>
             <tr>
               <td>Random Forest</td>
               <td>65.9%</td>
+              <td>0.58</td>
+              <td>0.43</td>
+              <td>0.50</td>
               <td>0.69</td>
             </tr>
             <tr>
               <td>XGBoost<span class="best-badge">Best</span></td>
               <td>67.8%</td>
+              <td>0.61</td>
+              <td>0.44</td>
+              <td>0.51</td>
               <td>0.71</td>
             </tr>
           </tbody>
@@ -127,6 +151,28 @@
       <div class="chart-container">
         <img src="project2_visuals/Picture 1.png" alt="ROC Curve comparison across all 4 classification models">
         <p class="chart-caption">ROC Curve Comparison — XGBoost (AUC: 0.709) leads all models, followed by Random Forest (0.699), Logistic Regression (0.693), and SVM Radial (0.683). Evaluated on 6,146 ICO projects via 5-fold cross-validation.</p>
+      </div>
+    </div>
+
+    <div class="content-section animate-on-scroll">
+      <h2>Feature Importance</h2>
+      <p>Random Forest and XGBoost both confirmed the same top predictors. The chart below shows the top 8 features ranked by XGBoost importance score — structural project characteristics dominate over marketing signals.</p>
+      <div class="table-wrap">
+        <table class="comparison-table">
+          <thead>
+            <tr><th>Rank</th><th>Feature</th><th>Description</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td>Rating</td><td>Expert/community rating of the ICO project</td></tr>
+            <tr><td>2</td><td>Bonus</td><td>Early investor bonus percentage offered</td></tr>
+            <tr><td>3</td><td>Team Size</td><td>Number of core team members</td></tr>
+            <tr><td>4</td><td>ICO Duration</td><td>Length of the fundraising window (days)</td></tr>
+            <tr><td>5</td><td>Price (USD)</td><td>Initial token price in USD</td></tr>
+            <tr><td>6</td><td>Has Whitepaper</td><td>Binary flag — project published a whitepaper</td></tr>
+            <tr><td>7</td><td>Has GitHub</td><td>Binary flag — active GitHub repository present</td></tr>
+            <tr><td>8</td><td>Min Investment</td><td>Minimum investment threshold required</td></tr>
+          </tbody>
+        </table>
       </div>
     </div>
 
@@ -146,7 +192,7 @@
         <div class="finding-card animate-on-scroll stagger-3">
           <span class="finding-number">Finding 03</span>
           <p class="finding-text">Team size, ICO duration, and token price are the next most predictive features</p>
-          <p class="finding-subtext">Structural project factors outweigh marketing signals</p>
+          <p class="finding-subtext">Validated via 5-fold cross-validation across all 6,146 ICOs — results are robust, not overfit</p>
         </div>
         <div class="finding-card animate-on-scroll stagger-4">
           <span class="finding-number">Finding 04</span>
@@ -185,6 +231,25 @@
     </a>
   </div>
 
+  <!-- PREV / NEXT -->
+  <div class="project-nav-strip">
+    <a href="project1.html" class="nav-strip-link">
+      <span class="nav-strip-dir">← Previous</span>
+      <span class="nav-strip-title">Consumer Behaviour &amp; Audience Segmentation</span>
+    </a>
+    <a href="project3.html" class="nav-strip-link next">
+      <span class="nav-strip-dir">Next →</span>
+      <span class="nav-strip-title">US Economic Demand Forecasting</span>
+    </a>
+  </div>
+
+  <!-- BACK TO TOP -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="m18 15-6-6-6 6"/>
+    </svg>
+  </button>
+
   <!-- FOOTER -->
   <footer>
     <p class="footer-text">Nishant Gawade · Graduate Data Analyst · Leeds, UK · 2026</p>
@@ -193,18 +258,48 @@
   <script>
     const html = document.documentElement;
     const themeToggle = document.getElementById('themeToggle');
-    const saved = localStorage.getItem('theme') || 'light';
+    const saved = localStorage.getItem('theme') || 'dark';
     html.setAttribute('data-theme', saved);
+    const themeLabel = document.getElementById('themeLabel');
+    function updateLabel(t) { if (themeLabel) themeLabel.textContent = t === 'dark' ? 'Light' : 'Dark'; }
+    updateLabel(saved);
     themeToggle.addEventListener('click', () => {
       const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
       html.setAttribute('data-theme', next);
       localStorage.setItem('theme', next);
+      updateLabel(next);
     });
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
     }, { threshold: 0.1, rootMargin: '0px 0px -48px 0px' });
     document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+
+    /* ---- Scroll progress bar ---- */
+    const progressBar = document.getElementById('scrollProgress');
+    window.addEventListener('scroll', () => {
+      const total = document.documentElement.scrollHeight - window.innerHeight;
+      progressBar.style.width = (window.scrollY / total * 100) + '%';
+    }, { passive: true });
+
+    /* ---- Back to top ---- */
+    const btt = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+      btt.classList.toggle('visible', window.scrollY / (document.documentElement.scrollHeight - window.innerHeight) > 0.40);
+    }, { passive: true });
+    btt.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+    /* ---- Card tilt ---- */
+    const TILT_MAX = 7;
+    document.querySelectorAll('.finding-card, .segment-card, .theme-card').forEach(card => {
+      card.addEventListener('mousemove', (e) => {
+        const r  = card.getBoundingClientRect();
+        const dx = (e.clientX - r.left - r.width  / 2) / (r.width  / 2);
+        const dy = (e.clientY - r.top  - r.height / 2) / (r.height / 2);
+        card.style.transform = `perspective(900px) rotateX(${-dy * TILT_MAX}deg) rotateY(${dx * TILT_MAX}deg) translateY(-4px)`;
+      });
+      card.addEventListener('mouseleave', () => { card.style.transform = ''; });
+    });
   </script>
 </body>
 </html>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,7 +7,12 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
-  <meta name="description" content="NLP project extracting themes and sentiment from 2,000+ hotel reviews using TF-IDF, LDA topic modelling, and sentiment analysis to identify key drivers of guest satisfaction." />
+  <meta name="description" content="NLP project extracting themes and sentiment from 2,000+ hotel reviews using TF-IDF to identify key drivers of guest satisfaction." />
+  <meta property="og:type"        content="website" />
+  <meta property="og:title"       content="Hotel Review Text Mining &amp; Sentiment Analysis — Nishant Gawade" />
+  <meta property="og:description" content="TF-IDF analysis of 2,000+ hotel reviews surfaces 5 actionable themes. R · tidytext · wordcloud." />
+  <meta property="og:image"       content="og-image.png" />
+  <meta name="twitter:card"       content="summary_large_image" />
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="style.css" />
   <script>
@@ -15,6 +20,9 @@
   </script>
 </head>
 <body>
+
+  <!-- SCROLL PROGRESS -->
+  <div class="scroll-progress" id="scrollProgress"></div>
 
   <!-- AURORA BACKGROUND -->
   <div class="aurora" aria-hidden="true">
@@ -44,6 +52,7 @@
         <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
         </svg>
+        <span class="theme-label" id="themeLabel">Light</span>
       </button>
     </div>
   </nav>
@@ -79,8 +88,8 @@
         <li>Dataset: 2,000+ unstructured hotel customer reviews</li>
         <li>Text preprocessing pipeline: tokenisation, stop-word removal, stemming, cleanup</li>
         <li>TF-IDF weighting to surface high-signal terms across the corpus</li>
-        <li>LDA topic modelling to identify recurring themes and sentiment clusters</li>
-        <li>Sentiment analysis to score and classify individual reviews</li>
+        <li>TF-IDF modelling applied separately to positive (4–5 star) and negative (1–2 star) review groups to surface high-signal distinguishing terms</li>
+        <li>Thematic interpretation of top TF-IDF terms to identify recurring satisfaction and dissatisfaction drivers</li>
         <li>Output: prioritised insight report with ranked improvement recommendations</li>
       </ul>
     </div>
@@ -90,8 +99,8 @@
       <div class="findings-grid">
         <div class="finding-card animate-on-scroll stagger-1">
           <span class="finding-number">Finding 01</span>
-          <p class="finding-text">Staff responsiveness is the #1 driver of negative reviews</p>
-          <p class="finding-subtext">Highest negative sentiment weight in the corpus</p>
+          <p class="finding-text">Hygiene and cleanliness failures dominate negative reviews</p>
+          <p class="finding-subtext">Top TF-IDF terms in 1–2 star reviews: 'stink', 'mold', 'bug', 'tape' — all pointing to maintenance failures</p>
         </div>
         <div class="finding-card animate-on-scroll stagger-2">
           <span class="finding-number">Finding 02</span>
@@ -105,8 +114,8 @@
         </div>
         <div class="finding-card animate-on-scroll stagger-4">
           <span class="finding-number">Finding 04</span>
-          <p class="finding-text">5 distinct themes identified via LDA topic modelling</p>
-          <p class="finding-subtext">Staff · Cleanliness · Location · Food · Value</p>
+          <p class="finding-text">5 actionable themes identified from TF-IDF term clusters</p>
+          <p class="finding-subtext">Hygiene · Staff &amp; Service · Comfort · Facilities · Value-for-Money</p>
         </div>
       </div>
     </div>
@@ -146,8 +155,30 @@
     </div>
 
     <div class="content-section animate-on-scroll">
+      <h2>What Satisfied Guests</h2>
+      <div class="chart-container">
+        <img src="project4_visuals/graph pos.png" alt="Top 25 positive words by TF-IDF score from hotel reviews">
+        <p class="chart-caption">Top 25 Positive Words by TF-IDF Score — from 4–5 star reviews. Terms like "spotlessly", "professional", "wonderful", and "comfy" reveal that cleanliness detail, staff professionalism, and physical comfort are the primary drivers of guest satisfaction.</p>
+      </div>
+    </div>
+
+    <div class="content-section animate-on-scroll">
+      <h2>Sentiment at a Glance</h2>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem;">
+        <div class="chart-container" style="margin:0;">
+          <img src="project4_visuals/pos.png" alt="Positive sentiment word cloud">
+          <p class="chart-caption">Positive reviews — word size reflects TF-IDF weight.</p>
+        </div>
+        <div class="chart-container" style="margin:0;">
+          <img src="project4_visuals/neg.png" alt="Negative sentiment word cloud">
+          <p class="chart-caption">Negative reviews — hygiene terms dominate.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section animate-on-scroll">
       <h2>Business Implications</h2>
-      <p>Hotel management should prioritise staff training and room cleanliness protocols — these two factors disproportionately drive poor reviews and are both operationally fixable. Location and value are harder to change; the highest ROI improvements lie in staff responsiveness and cleanliness. A targeted staff training programme and strengthened housekeeping checklist would address the two largest negative sentiment drivers identified by the model.</p>
+      <p>The TF-IDF analysis reveals a clear prioritisation for hotel management. Hygiene failures are the single biggest source of negative reviews and are operationally fixable — a stronger housekeeping checklist and room inspection protocol would directly address the top negative terms. Staff behaviour is the second lever. Location and comfort are already working strengths and should be emphasised in marketing. These findings give management a ranked, evidence-based improvement roadmap grounded directly in the voice of the customer.</p>
     </div>
 
     <div class="content-section animate-on-scroll">
@@ -174,6 +205,21 @@
     </a>
   </div>
 
+  <!-- PREV / NEXT -->
+  <div class="project-nav-strip">
+    <a href="project3.html" class="nav-strip-link">
+      <span class="nav-strip-dir">← Previous</span>
+      <span class="nav-strip-title">US Economic Demand Forecasting</span>
+    </a>
+  </div>
+
+  <!-- BACK TO TOP -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="m18 15-6-6-6 6"/>
+    </svg>
+  </button>
+
   <!-- FOOTER -->
   <footer>
     <p class="footer-text">Nishant Gawade · Graduate Data Analyst · Leeds, UK · 2026</p>
@@ -182,18 +228,48 @@
   <script>
     const html = document.documentElement;
     const themeToggle = document.getElementById('themeToggle');
-    const saved = localStorage.getItem('theme') || 'light';
+    const saved = localStorage.getItem('theme') || 'dark';
     html.setAttribute('data-theme', saved);
+    const themeLabel = document.getElementById('themeLabel');
+    function updateLabel(t) { if (themeLabel) themeLabel.textContent = t === 'dark' ? 'Light' : 'Dark'; }
+    updateLabel(saved);
     themeToggle.addEventListener('click', () => {
       const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
       html.setAttribute('data-theme', next);
       localStorage.setItem('theme', next);
+      updateLabel(next);
     });
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
     }, { threshold: 0.1, rootMargin: '0px 0px -48px 0px' });
     document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+
+    /* ---- Scroll progress bar ---- */
+    const progressBar = document.getElementById('scrollProgress');
+    window.addEventListener('scroll', () => {
+      const total = document.documentElement.scrollHeight - window.innerHeight;
+      progressBar.style.width = (window.scrollY / total * 100) + '%';
+    }, { passive: true });
+
+    /* ---- Back to top ---- */
+    const btt = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+      btt.classList.toggle('visible', window.scrollY / (document.documentElement.scrollHeight - window.innerHeight) > 0.40);
+    }, { passive: true });
+    btt.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+    /* ---- Card tilt ---- */
+    const TILT_MAX = 7;
+    document.querySelectorAll('.finding-card, .segment-card, .theme-card').forEach(card => {
+      card.addEventListener('mousemove', (e) => {
+        const r  = card.getBoundingClientRect();
+        const dx = (e.clientX - r.left - r.width  / 2) / (r.width  / 2);
+        const dy = (e.clientY - r.top  - r.height / 2) / (r.height / 2);
+        card.style.transform = `perspective(900px) rotateX(${-dy * TILT_MAX}deg) rotateY(${dx * TILT_MAX}deg) translateY(-4px)`;
+      });
+      card.addEventListener('mouseleave', () => { card.style.transform = ''; });
+    });
   </script>
 </body>
 </html>

@@ -1,13 +1,20 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Nishant Gawade — Graduate Data Analyst</title>
   <meta name="description" content="Graduate Data Analyst specialising in Power BI, SQL, Python, and Machine Learning. Based in Leeds, UK." />
+  <meta property="og:type"        content="website" />
+  <meta property="og:title"       content="Nishant Gawade — Graduate Data Analyst" />
+  <meta property="og:description" content="MSc Business Analytics (Merit, Distinction dissertation) · Power BI · Python · ML · Leeds, UK" />
+  <meta property="og:image"       content="og-image.png" />
+  <meta property="og:url"         content="https://nishantgawade.github.io/" />
+  <meta name="twitter:card"       content="summary_large_image" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="style.css" />
   <script>
@@ -15,6 +22,9 @@
   </script>
 </head>
 <body>
+
+  <!-- SCROLL PROGRESS -->
+  <div class="scroll-progress" id="scrollProgress"></div>
 
   <!-- AURORA BACKGROUND -->
   <div class="aurora" aria-hidden="true">
@@ -47,6 +57,7 @@
         <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
         </svg>
+        <span class="theme-label" id="themeLabel">Light</span>
       </button>
       <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
         <span></span><span></span><span></span>
@@ -69,9 +80,13 @@
   <section class="hero" id="home">
     <div class="hero-inner">
       <div class="hero-content">
+        <div class="hero-avatar">
+          <img src="IMG_5958.jpeg" alt="Nishant Gawade">
+        </div>
         <span class="availability-badge">Open to Roles · UK · 2026</span>
         <h1 class="hero-title">Turning data<br>into decisions.</h1>
-        <p class="hero-subtitle">Graduate Data Analyst — Power BI · SQL · Python · Machine Learning</p>
+        <p class="hero-typed-line"><span class="typed-prefix">&gt;</span> <span id="typed-role">Data Analyst</span></p>
+        <p class="hero-subtitle">Power BI · SQL · Python · Machine Learning</p>
         <div class="hero-ctas">
           <a href="#projects" class="btn-primary">View My Work</a>
           <a href="Nishant_Gawade_CV.pdf" download class="btn-secondary">
@@ -84,9 +99,19 @@
           </a>
         </div>
       </div>
-      <div class="hero-visual">
-        <div class="photo-circle">
-          <img src="IMG_5958.jpeg" alt="Nishant Gawade">
+      <div class="hero-terminal">
+        <div class="terminal-bar">
+          <div class="t-dots">
+            <span class="t-dot t-red"></span>
+            <span class="t-dot t-yellow"></span>
+            <span class="t-dot t-green"></span>
+          </div>
+          <span class="t-title">sql-client — portfolio_db</span>
+        </div>
+        <div class="terminal-body" id="termBody"></div>
+        <div class="terminal-input-row" id="termInputRow" style="display:none">
+          <span class="t-prompt">guest@portfolio:~$&nbsp;</span>
+          <input id="termInput" type="text" autocomplete="off" spellcheck="false" aria-label="Terminal input">
         </div>
       </div>
     </div>
@@ -100,21 +125,25 @@
         <h2>I build clarity out of complexity.</h2>
       </div>
       <div class="about-text animate-on-scroll">
-        <p>I'm a Graduate Data Analyst with an MSc in Business Analytics &amp; Decision Sciences from the University of Leeds (Merit, Dissertation: Distinction) and 2.5 years of hands-on analytics experience at Venus Tours, where I built dashboards, analysed campaigns, and delivered insights that moved real business metrics.</p>
-        <p>I work across the full analytics stack — from raw data cleaning and SQL querying to machine learning pipelines and interactive Power BI dashboards. I'm based in Leeds and open to graduate Data Analyst roles across the UK.</p>
+        <p>I'm a Graduate Data Analyst with an MSc in Business Analytics &amp; Decision Sciences from the University of Leeds (Merit, Dissertation: Distinction) and 2.5 years of analytics experience at Venus Tours, where I built Power BI dashboards, cleaned multi-source datasets, and translated campaign data into actionable insights for stakeholders.</p>
+        <p>I work across the full analytics stack — from survey design and data cleaning to Python-based statistical modelling (regression, mediation analysis, clustering, factor analysis) and interactive Power BI dashboards. I'm comfortable presenting findings to non-technical audiences and have experience working in small cross-functional teams using agile workflows. Based in Leeds and open to analytics and data roles across the UK.</p>
       </div>
       <div class="stats-grid">
         <div class="stat-card animate-on-scroll stagger-1">
-          <span class="stat-number" id="c-years">2.5 Yrs</span>
-          <span class="stat-label">Experience</span>
+          <span class="stat-number">72</span>
+          <span class="stat-label">Survey Respondents</span>
         </div>
         <div class="stat-card animate-on-scroll stagger-2">
           <span class="stat-number" id="c-projects">4</span>
           <span class="stat-label">Analytics Projects</span>
         </div>
         <div class="stat-card animate-on-scroll stagger-3">
-          <span class="stat-number">MSc</span>
-          <span class="stat-label">Merit</span>
+          <span class="stat-number">2k+</span>
+          <span class="stat-label">Reviews Analysed</span>
+        </div>
+        <div class="stat-card animate-on-scroll stagger-4">
+          <span class="stat-number">5</span>
+          <span class="stat-label">Core Tools · Production</span>
         </div>
       </div>
     </div>
@@ -142,7 +171,7 @@
         </div>
         <div class="edu-row">
           <div>
-            <div class="edu-degree">B.E. Information Technology</div>
+            <div class="edu-degree">B.E. Information Technology <span class="edu-equiv">(equiv. UK BEng)</span></div>
             <div class="edu-institution">University of Mumbai · Mumbai, India</div>
             <div class="edu-tags">
               <span class="edu-tag">Engineering</span>
@@ -170,36 +199,42 @@
             <span class="featured-badge">Distinction</span>
             <span class="featured-badge-sub">University of Leeds · 2025</span>
           </div>
+          <div class="project-outcome">
+            <span class="outcome-label">Mediation &amp; SEM across 72 respondents · Distinction</span>
+            <div class="outcome-bar"><div class="outcome-fill" style="--w:1"></div></div>
+          </div>
           <span class="project-link">View Project →</span>
         </a>
         <a href="project2.html" class="project-card animate-on-scroll stagger-2">
           <span class="project-number">02</span>
           <h3 class="project-title">ICO Fundraising Success Prediction</h3>
           <span class="project-category">Machine Learning</span>
+          <div class="project-outcome">
+            <span class="outcome-label">Top predictors identified: team size, whitepaper quality, social reach</span>
+            <div class="outcome-bar"><div class="outcome-fill" style="--w:0.71"></div></div>
+          </div>
           <span class="project-link">View Project →</span>
         </a>
         <a href="project3.html" class="project-card animate-on-scroll stagger-3">
           <span class="project-number">03</span>
           <h3 class="project-title">US Economic Demand Forecasting</h3>
-          <span class="project-category">Forecasting</span>
+          <span class="project-category">Time Series · Forecasting</span>
+          <div class="project-outcome">
+            <span class="outcome-label">ARIMA outperformed baseline across 3 economic indicators · MAPE 0.35%</span>
+            <div class="outcome-bar"><div class="outcome-fill" style="--w:0.82"></div></div>
+          </div>
           <span class="project-link">View Project →</span>
         </a>
         <a href="project4.html" class="project-card animate-on-scroll stagger-4">
           <span class="project-number">04</span>
           <h3 class="project-title">Hotel Review Text Mining &amp; Sentiment Analysis</h3>
           <span class="project-category">NLP · Text Analytics</span>
+          <div class="project-outcome">
+            <span class="outcome-label">Cleanliness &amp; staff response identified as primary drivers of negative sentiment</span>
+            <div class="outcome-bar"><div class="outcome-fill" style="--w:0.88"></div></div>
+          </div>
           <span class="project-link">View Project →</span>
         </a>
-      </div>
-      <div class="skills-legend animate-on-scroll">
-        <div class="legend-item">
-          <span class="legend-dot core">Power BI</span>
-          Core skill
-        </div>
-        <div class="legend-item">
-          <span class="legend-dot familiar">Tableau</span>
-          Familiar
-        </div>
       </div>
     </div>
   </section>
@@ -209,7 +244,7 @@
     <div class="experience-inner">
       <div class="section-header animate-on-scroll">
         <span class="section-label">Experience</span>
-        <h2>Real work. Real impact.</h2>
+        <h2>Where I've worked.</h2>
       </div>
       <div class="experience-card animate-on-scroll">
         <div class="exp-header">
@@ -222,11 +257,11 @@
           </div>
         </div>
         <ul class="exp-bullets">
-          <li class="exp-bullet">Engineered Power BI dashboards using DAX measures to track KPIs across 15+ marketing campaigns, cutting monthly reporting time by 20%</li>
-          <li class="exp-bullet">Analysed customer engagement and campaign performance in Excel and Power BI, improving client reach by 28%</li>
-          <li class="exp-bullet">Consolidated and cleaned multi-source datasets across social media platforms and survey tools, improving reporting accuracy across all campaigns</li>
-          <li class="exp-bullet">Modelled customer behaviour and satisfaction data to inform event personalisation strategies, raising satisfaction scores by 25%</li>
-          <li class="exp-bullet">Worked within a 5-person team to align data insights with communication strategy, increasing online visibility by 35%</li>
+          <li class="exp-bullet">Built Power BI dashboards using DAX measures to track KPIs across 15+ marketing campaigns, enabling the team to identify underperforming channels and reallocate budget weekly</li>
+          <li class="exp-bullet">Analysed customer engagement and campaign performance data in Excel and Power BI, producing weekly insight reports presented directly to the marketing lead</li>
+          <li class="exp-bullet">Consolidated and cleaned multi-source datasets from social media platforms, CRM exports, and survey tools — standardising reporting across all campaigns</li>
+          <li class="exp-bullet">Segmented customer behaviour data to surface patterns in event attendance and satisfaction, informing personalisation decisions for repeat clients</li>
+          <li class="exp-bullet">Collaborated in a 5-person cross-functional team, translating data findings into plain-language recommendations for non-technical stakeholders</li>
         </ul>
       </div>
     </div>
@@ -247,7 +282,7 @@
             <span class="skill-tag">DAX</span>
             <span class="skill-tag">Excel (Advanced)</span>
             <span class="skill-tag">Power Query</span>
-            <span class="skill-tag familiar">Tableau</span>
+            <span class="skill-tag">Tableau</span>
           </div>
         </div>
         <div class="skill-card animate-on-scroll stagger-2">
@@ -258,8 +293,6 @@
             <span class="skill-tag">Scikit-learn</span>
             <span class="skill-tag">Statsmodels</span>
             <span class="skill-tag">R</span>
-            <span class="skill-tag familiar">tidyverse</span>
-            <span class="skill-tag familiar">caret</span>
             <span class="skill-tag">ggplot2</span>
           </div>
         </div>
@@ -282,7 +315,7 @@
             <span class="skill-tag">XGBoost</span>
             <span class="skill-tag">NLP</span>
             <span class="skill-tag">Sentiment Analysis</span>
-            <span class="skill-tag familiar">EFA</span>
+            <span class="skill-tag">EFA</span>
           </div>
         </div>
       </div>
@@ -306,7 +339,7 @@
           </div>
           <div class="cert-body">
             <div class="cert-name">Microsoft Power BI Desktop for Business Intelligence</div>
-            <div class="cert-issuer">Maven Analytics · Udemy</div>
+            <div class="cert-issuer">Maven Analytics · Udemy · <span class="cert-status-completed">Completed</span></div>
           </div>
           <div class="cert-arrow">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -323,7 +356,7 @@
           </div>
           <div class="cert-body">
             <div class="cert-name">Microsoft Office Specialist: Excel Associate (Microsoft 365)</div>
-            <div class="cert-issuer">Microsoft · Credly</div>
+            <div class="cert-issuer">Microsoft · Credly · <span class="cert-status-verified">Verified</span></div>
           </div>
           <div class="cert-arrow">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -340,7 +373,7 @@
     <div class="contact-inner">
       <span class="section-label">Contact</span>
       <h2>Let's work together.</h2>
-      <p class="contact-subtext">Open to graduate Data Analyst roles across the UK.</p>
+      <p class="contact-subtext">Open to analytics and data roles across the UK.</p>
       <div class="contact-buttons">
         <a href="mailto:nishantgawade02@gmail.com" class="contact-btn">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
@@ -363,7 +396,7 @@
           </svg>
           GitHub
         </a>
-        <span class="contact-btn" style="cursor:default;">
+        <span class="contact-location">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
             <path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0Z"/>
             <circle cx="12" cy="10" r="3"/>
@@ -372,7 +405,7 @@
         </span>
       </div>
       <div class="resume-download-section animate-on-scroll">
-        <a href="Nishant_Gawade_CV.pdf" download class="btn-download">
+        <a href="Nishant_Gawade_CV.pdf" download class="btn-download" id="cvDownloadBtn">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
             <polyline points="7 10 12 15 17 10"/>
@@ -381,9 +414,17 @@
           Download My Resume
         </a>
         <p class="resume-meta">Data Analyst CV · PDF · Updated 2026</p>
+        <span class="download-count" id="downloadCount"></span>
       </div>
     </div>
   </section>
+
+  <!-- BACK TO TOP -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="m18 15-6-6-6 6"/>
+    </svg>
+  </button>
 
   <!-- FOOTER -->
   <footer>
@@ -394,7 +435,7 @@
     /* ---- Theme toggle ---- */
     const html = document.documentElement;
     const themeToggle = document.getElementById('themeToggle');
-    const saved = localStorage.getItem('theme') || 'light';
+    const saved = localStorage.getItem('theme') || 'dark';
     html.setAttribute('data-theme', saved);
     themeToggle.addEventListener('click', () => {
       const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
@@ -466,6 +507,272 @@
       });
     }, { threshold: 0.45 });
     sections.forEach(s => sectionObs.observe(s));
+
+    /* ---- Scroll progress bar ---- */
+    const progressBar = document.getElementById('scrollProgress');
+    window.addEventListener('scroll', () => {
+      const total = document.documentElement.scrollHeight - window.innerHeight;
+      progressBar.style.width = (window.scrollY / total * 100) + '%';
+    }, { passive: true });
+
+    /* ---- Hero cursor glow ---- */
+    const hero = document.querySelector('.hero');
+    if (hero) {
+      hero.addEventListener('mousemove', (e) => {
+        const rect = hero.getBoundingClientRect();
+        hero.style.setProperty('--cursor-x', ((e.clientX - rect.left) / rect.width  * 100) + '%');
+        hero.style.setProperty('--cursor-y', ((e.clientY - rect.top)  / rect.height * 100) + '%');
+      });
+    }
+
+    /* ---- Card tilt ---- */
+    const TILT_MAX = 3;
+    document.querySelectorAll('.project-card, .stat-card, .skill-card, .cert-card').forEach(card => {
+      card.addEventListener('mousemove', (e) => {
+        const r  = card.getBoundingClientRect();
+        const dx = (e.clientX - r.left - r.width  / 2) / (r.width  / 2);
+        const dy = (e.clientY - r.top  - r.height / 2) / (r.height / 2);
+        card.style.transform = `perspective(900px) rotateX(${-dy * TILT_MAX}deg) rotateY(${dx * TILT_MAX}deg) translateY(-4px)`;
+      });
+      card.addEventListener('mouseleave', () => { card.style.transform = ''; });
+    });
+
+    /* ---- Typed headline ---- */
+    const roles = ['Data Analyst', 'BI Developer', 'Analytics Consultant'];
+    let ri = 0, ci = 0, deleting = false;
+    const typedEl = document.getElementById('typed-role');
+    if (typedEl) {
+      function typeNext() {
+        const word = roles[ri];
+        if (!deleting) {
+          typedEl.textContent = word.slice(0, ++ci);
+          if (ci === word.length) { deleting = true; setTimeout(typeNext, 2000); return; }
+        } else {
+          typedEl.textContent = word.slice(0, --ci);
+          if (ci === 0) { deleting = false; ri = (ri + 1) % roles.length; }
+        }
+        setTimeout(typeNext, deleting ? 55 : 95);
+      }
+      setTimeout(typeNext, 1200);
+    }
+
+    /* ---- Theme label ---- */
+    const themeLabel = document.getElementById('themeLabel');
+    function updateLabel(t) { if (themeLabel) themeLabel.textContent = t === 'dark' ? 'Light' : 'Dark'; }
+    updateLabel(saved);
+    themeToggle.addEventListener('click', () => {
+      updateLabel(html.getAttribute('data-theme'));
+    });
+
+    /* ---- Back to top ---- */
+    const btt = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+      const pct = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
+      btt.classList.toggle('visible', pct > 0.40);
+    }, { passive: true });
+    btt.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+    /* ---- Smooth anchor nav + URL update ---- */
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+      link.addEventListener('click', (e) => {
+        const href = link.getAttribute('href');
+        const target = document.querySelector(href);
+        if (!target) return;
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth' });
+        history.pushState(null, '', href);
+        closeMenu();
+      });
+    });
+
+    /* ---- CV download counter ---- */
+    const cvBtn = document.getElementById('cvDownloadBtn');
+    const countEl = document.getElementById('downloadCount');
+    let dlCount = parseInt(localStorage.getItem('cvDownloads') || '0');
+    if (dlCount > 0 && countEl) countEl.textContent = `Downloaded ${dlCount} time${dlCount > 1 ? 's' : ''}`;
+    cvBtn?.addEventListener('click', () => {
+      dlCount++;
+      localStorage.setItem('cvDownloads', dlCount);
+      if (countEl) countEl.textContent = `Downloaded ${dlCount} time${dlCount > 1 ? 's' : ''}`;
+    });
+
+
+  /* ── SQL Terminal Widget ── */
+  (function () {
+    const termBody = document.getElementById('termBody');
+    const termInputRow = document.getElementById('termInputRow');
+    const termInput = document.getElementById('termInput');
+    if (!termBody) return;
+
+    const PROMPT = '<span class="t-prompt">nishant@portfolio_db&nbsp;&gt;&nbsp;</span>';
+
+    const DB = {
+      skills: {
+        headers: ['NAME', 'LEVEL', 'CATEGORY'],
+        rows: [
+          ['Python',     'Advanced',     'Language'],
+          ['SQL',        'Advanced',     'Language'],
+          ['Power BI',   'Advanced',     'BI Tool'],
+          ['R',          'Intermediate', 'Language'],
+          ['ML/Sklearn', 'Advanced',     'Library'],
+          ['Excel',      'Advanced',     'Tool'],
+        ]
+      },
+      projects: {
+        headers: ['PROJECT', 'YEAR', 'OUTCOME'],
+        rows: [
+          ['Dissertation NLP',  '2025', 'Distinction'],
+          ['ICO Fraud ML',      '2025', 'AUC 0.71'],
+          ['ARIMA Forecasting', '2024', 'MAPE 0.35%'],
+          ['Hotel Reviews NLP', '2024', '2000+ reviews'],
+        ]
+      },
+      experience: {
+        headers: ['ROLE', 'ORGANISATION', 'DETAIL'],
+        rows: [
+          ['Graduate Data Analyst', 'Seeking',        'UK · 2026'],
+          ['MSc Business Analytics','Univ. of Leeds', 'Merit'],
+          ['Dissertation',          'Univ. of Leeds', 'Distinction'],
+        ]
+      },
+      contact: {
+        headers: ['CHANNEL', 'VALUE'],
+        rows: [
+          ['Email',    'nishantgawade02@gmail.com'],
+          ['LinkedIn', 'linkedin.com/in/nishant-gawade'],
+          ['Location', 'United Kingdom'],
+        ]
+      }
+    };
+
+    const cmdHistory = [];
+    let histIdx = -1;
+
+    function addLine(html) {
+      const d = document.createElement('div');
+      d.className = 't-line';
+      d.innerHTML = html;
+      termBody.appendChild(d);
+      termBody.scrollTop = termBody.scrollHeight;
+    }
+    function blank() { addLine(''); }
+
+    function highlightSQL(raw) {
+      return raw.replace(/\b(SELECT|FROM|select|from)\b/g,
+        m => `<span class="t-sql-kw">${m}</span>`
+      ).replace(/\*/g, '<span class="t-sql-kw">*</span>');
+    }
+
+    function renderTable(table) {
+      const { headers, rows } = table;
+      const widths = headers.map((h, i) =>
+        Math.max(h.length, ...rows.map(r => (r[i] || '').length)) + 2
+      );
+      const B = s => `<span class="t-border">${s}</span>`;
+      const K = s => `<span class="t-keyword">${s}</span>`;
+      const top = '┌' + widths.map(w => '─'.repeat(w)).join('┬') + '┐';
+      const mid = '├' + widths.map(w => '─'.repeat(w)).join('┼') + '┤';
+      const bot = '└' + widths.map(w => '─'.repeat(w)).join('┴') + '┘';
+      const cell = (val, w, fn) => fn(' ' + (val||'').padEnd(w - 1));
+      addLine(B(top));
+      addLine(B('│') + headers.map((h,i) => cell(h, widths[i], K) + B('│')).join(''));
+      addLine(B(mid));
+      rows.forEach(r =>
+        addLine(B('│') + r.map((c,i) => ' ' + (c||'').padEnd(widths[i]-1) + B('│')).join(''))
+      );
+      addLine(B(bot));
+    }
+
+    function qTime() { return (Math.random() * 0.03 + 0.01).toFixed(2); }
+
+    function runCommand(raw) {
+      if (!raw.trim()) return;
+      cmdHistory.unshift(raw.trim());
+      histIdx = -1;
+      const cmd = raw.trim().toLowerCase().replace(/\s+/g,' ');
+      addLine(PROMPT + highlightSQL(raw.trim()));
+
+      if (cmd === 'help' || cmd === '\\h') {
+        blank();
+        addLine('Commands:');
+        addLine('  <span class="t-sql-kw">SELECT * FROM</span> &lt;table&gt;');
+        addLine('  <span class="t-keyword">clear</span>   — clear screen');
+        addLine('  <span class="t-keyword">help</span>    — show this message');
+        blank();
+        addLine('Tables: <span class="t-keyword">skills</span>  <span class="t-keyword">projects</span>  <span class="t-keyword">experience</span>  <span class="t-keyword">contact</span>');
+        blank();
+      } else if (cmd.match(/^select \* from (skills|projects|experience|contact)/)) {
+        const tbl = cmd.match(/from (\w+)/)[1];
+        blank();
+        renderTable(DB[tbl]);
+        addLine(`<span class="t-info">${DB[tbl].rows.length} rows in set (${qTime()}s)</span>`);
+        blank();
+      } else if (cmd === 'clear' || cmd === '\\c') {
+        termBody.innerHTML = '';
+      } else {
+        blank();
+        addLine(`<span class="t-error">ERROR 1064: Syntax error near '${raw.trim().split(' ')[0]}'</span>`);
+        addLine(`<span class="t-info">Type <span class="t-keyword">help</span> to see available commands.</span>`);
+        blank();
+      }
+      termBody.scrollTop = termBody.scrollHeight;
+    }
+
+    function typeCmd(text, speed) {
+      speed = speed || 38;
+      return new Promise(function(resolve) {
+        const d = document.createElement('div');
+        d.className = 't-line';
+        d.innerHTML = PROMPT + '<span class="t-cmd-typing"></span>';
+        termBody.appendChild(d);
+        const target = d.querySelector('.t-cmd-typing');
+        let i = 0;
+        const iv = setInterval(function() {
+          target.textContent += text[i++];
+          termBody.scrollTop = termBody.scrollHeight;
+          if (i >= text.length) { clearInterval(iv); setTimeout(resolve, 280); }
+        }, speed + (Math.random() * 12 - 6));
+      });
+    }
+
+    function delay(ms) { return new Promise(r => setTimeout(r, ms)); }
+
+    async function autoPlay() {
+      await delay(400);
+      addLine('<span class="t-welcome">Welcome to portfolio_db  v1.0.0</span>');
+      addLine('<span class="t-welcome">Type \'help\' for available commands.</span>');
+      blank();
+      termInputRow.style.display = 'flex';
+      termInput.focus();
+    }
+
+    termBody.addEventListener('click', () => termInput && termInput.focus());
+
+    termInput && termInput.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') {
+        const val = termInput.value;
+        termInput.value = '';
+        runCommand(val);
+      } else if (e.key === 'ArrowUp') {
+        e.preventDefault();
+        if (histIdx < cmdHistory.length - 1) {
+          histIdx++;
+          termInput.value = cmdHistory[histIdx];
+        }
+      } else if (e.key === 'ArrowDown') {
+        e.preventDefault();
+        if (histIdx > 0) {
+          histIdx--;
+          termInput.value = cmdHistory[histIdx];
+        } else {
+          histIdx = -1;
+          termInput.value = '';
+        }
+      }
+    });
+
+    autoPlay();
+  })();
   </script>
 </body>
 </html>

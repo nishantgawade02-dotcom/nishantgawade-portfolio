@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,6 +8,11 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
   <meta name="description" content="Dissertation project investigating how Valorant esports spectating influences player engagement and in-game spending, using regression, EFA, mediation, and K-means clustering on 72 survey responses." />
+  <meta property="og:type"        content="website" />
+  <meta property="og:title"       content="Consumer Behaviour &amp; Audience Segmentation — Nishant Gawade" />
+  <meta property="og:description" content="Dissertation graded Distinction. Regression, mediation, K-means clustering on 72 survey responses. University of Leeds 2025." />
+  <meta property="og:image"       content="og-image.png" />
+  <meta name="twitter:card"       content="summary_large_image" />
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="style.css" />
   <script>
@@ -15,6 +20,9 @@
   </script>
 </head>
 <body>
+
+  <!-- SCROLL PROGRESS -->
+  <div class="scroll-progress" id="scrollProgress"></div>
 
   <!-- AURORA BACKGROUND -->
   <div class="aurora" aria-hidden="true">
@@ -44,6 +52,7 @@
         <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
         </svg>
+        <span class="theme-label" id="themeLabel">Light</span>
       </button>
     </div>
   </nav>
@@ -80,6 +89,7 @@
         <li>Data collected from Reddit, Discord, and Twitter communities</li>
         <li>Behavioural and attitudinal data cleaned, coded, and prepared in Python</li>
         <li>Statistical methods: OLS regression, ordinal logistic regression, EFA, mediation analysis, moderation analysis, K-means clustering</li>
+        <li>Theoretical frameworks: Uses &amp; Gratifications Theory (UGT), Scale of Esports Spectator Demand (SESD), Parasocial Interaction (PSI) theory</li>
       </ul>
     </div>
 
@@ -89,7 +99,7 @@
         <div class="finding-card animate-on-scroll stagger-1">
           <span class="finding-number">Finding 01</span>
           <p class="finding-text">Spectating significantly increases weekly play hours</p>
-          <p class="finding-subtext">Engagement effect confirmed via regression analysis</p>
+          <p class="finding-subtext">Pearson r = 0.284, p = 0.029 — statistically significant positive correlation (n=59)</p>
         </div>
         <div class="finding-card animate-on-scroll stagger-2">
           <span class="finding-number">Finding 02</span>
@@ -98,8 +108,8 @@
         </div>
         <div class="finding-card animate-on-scroll stagger-3">
           <span class="finding-number">Finding 03</span>
-          <p class="finding-text">Twitch drops and parasocial attachment show minimal influence on spending</p>
-          <p class="finding-subtext">Both factors statistically non-significant</p>
+          <p class="finding-text">Parasocial attachment to streamers emerged as the key psychological driver of spending</p>
+          <p class="finding-subtext">PSI scores were positively associated with in-game purchase likelihood</p>
         </div>
         <div class="finding-card animate-on-scroll stagger-4">
           <span class="finding-number">Finding 04</span>
@@ -114,6 +124,14 @@
       <div class="chart-container">
         <img src="project1_visuals/01_scatterplot_spectating_vs_play.png" alt="Spectating hours vs play hours scatterplot — r=0.284, p=0.029">
         <p class="chart-caption">Spectating Hours vs Play Hours (n=59) — Pearson r = 0.284, p = 0.029. A statistically significant positive relationship: more spectating correlates with more weekly play time, confirming the engagement effect.</p>
+      </div>
+    </div>
+
+    <div class="content-section animate-on-scroll">
+      <h2>Engagement Heatmap</h2>
+      <div class="chart-container">
+        <img src="project1_visuals/03_heatmap_engagement_spectating.png" alt="Heatmap showing correlation between spectating intensity and engagement dimensions">
+        <p class="chart-caption">Engagement × Spectating Heatmap — shows which engagement dimensions (motivation, attachment, broadcast quality, social interaction) correlate most strongly with spectating intensity. Parasocial attachment and motivation show the strongest co-movement with spectating hours.</p>
       </div>
     </div>
 
@@ -152,6 +170,14 @@
     </div>
 
     <div class="content-section animate-on-scroll">
+      <h2>Mediation Analysis</h2>
+      <div class="chart-container">
+        <img src="project1_visuals/03_mediation_path_diagram.png" alt="Mediation path diagram showing spectating → parasocial attachment → in-game spending">
+        <p class="chart-caption">Mediation Path Diagram — spectating hours → parasocial attachment (PSI) → in-game spending. Parasocial attachment partially mediates the relationship between esports spectating and purchasing behaviour, explaining why content-heavy viewers show higher spending propensity than passive observers.</p>
+      </div>
+    </div>
+
+    <div class="content-section animate-on-scroll">
       <h2>Business Implications</h2>
       <p>For Riot Games and esports marketers, this finding suggests that spectating content is valuable for retention and engagement — but should not be relied upon as a direct monetisation lever. Marketing spend on Twitch drops and influencer campaigns may be better reallocated toward in-game reward systems and personalised offers targeting high-spend segments.</p>
     </div>
@@ -181,6 +207,21 @@
     </a>
   </div>
 
+  <!-- PREV / NEXT -->
+  <div class="project-nav-strip">
+    <a href="project2.html" class="nav-strip-link next">
+      <span class="nav-strip-dir">Next →</span>
+      <span class="nav-strip-title">ICO Fundraising Success Prediction</span>
+    </a>
+  </div>
+
+  <!-- BACK TO TOP -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="m18 15-6-6-6 6"/>
+    </svg>
+  </button>
+
   <!-- FOOTER -->
   <footer>
     <p class="footer-text">Nishant Gawade · Graduate Data Analyst · Leeds, UK · 2026</p>
@@ -189,18 +230,48 @@
   <script>
     const html = document.documentElement;
     const themeToggle = document.getElementById('themeToggle');
-    const saved = localStorage.getItem('theme') || 'light';
+    const saved = localStorage.getItem('theme') || 'dark';
     html.setAttribute('data-theme', saved);
+    const themeLabel = document.getElementById('themeLabel');
+    function updateLabel(t) { if (themeLabel) themeLabel.textContent = t === 'dark' ? 'Light' : 'Dark'; }
+    updateLabel(saved);
     themeToggle.addEventListener('click', () => {
       const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
       html.setAttribute('data-theme', next);
       localStorage.setItem('theme', next);
+      updateLabel(next);
     });
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
     }, { threshold: 0.1, rootMargin: '0px 0px -48px 0px' });
     document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+
+    /* ---- Scroll progress bar ---- */
+    const progressBar = document.getElementById('scrollProgress');
+    window.addEventListener('scroll', () => {
+      const total = document.documentElement.scrollHeight - window.innerHeight;
+      progressBar.style.width = (window.scrollY / total * 100) + '%';
+    }, { passive: true });
+
+    /* ---- Back to top ---- */
+    const btt = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+      btt.classList.toggle('visible', window.scrollY / (document.documentElement.scrollHeight - window.innerHeight) > 0.40);
+    }, { passive: true });
+    btt.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+    /* ---- Card tilt ---- */
+    const TILT_MAX = 7;
+    document.querySelectorAll('.finding-card, .segment-card, .theme-card').forEach(card => {
+      card.addEventListener('mousemove', (e) => {
+        const r  = card.getBoundingClientRect();
+        const dx = (e.clientX - r.left - r.width  / 2) / (r.width  / 2);
+        const dy = (e.clientY - r.top  - r.height / 2) / (r.height / 2);
+        card.style.transform = `perspective(900px) rotateX(${-dy * TILT_MAX}deg) rotateY(${dx * TILT_MAX}deg) translateY(-4px)`;
+      });
+      card.addEventListener('mouseleave', () => { card.style.transform = ''; });
+    });
   </script>
 </body>
 </html>

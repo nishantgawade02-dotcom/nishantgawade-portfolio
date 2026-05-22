@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,7 +7,12 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
-  <meta name="description" content="Time series forecasting project modelling US Personal Consumption Expenditures using ARIMA(5,1,2) to produce a 12-month economic demand outlook with Power BI visualisation." />
+  <meta name="description" content="Time series forecasting project modelling US Personal Consumption Expenditures using ARIMA(5,1,2) to produce a 12-month economic demand outlook." />
+  <meta property="og:type"        content="website" />
+  <meta property="og:title"       content="US Economic Demand Forecasting — Nishant Gawade" />
+  <meta property="og:description" content="ARIMA(5,1,2) achieves MAPE 0.35% forecasting US PCE. 12-month outlook with 95% confidence intervals. R + forecast package." />
+  <meta property="og:image"       content="og-image.png" />
+  <meta name="twitter:card"       content="summary_large_image" />
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="style.css" />
   <script>
@@ -15,6 +20,9 @@
   </script>
 </head>
 <body>
+
+  <!-- SCROLL PROGRESS -->
+  <div class="scroll-progress" id="scrollProgress"></div>
 
   <!-- AURORA BACKGROUND -->
   <div class="aurora" aria-hidden="true">
@@ -44,6 +52,7 @@
         <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
         </svg>
+        <span class="theme-label" id="themeLabel">Light</span>
       </button>
     </div>
   </nav>
@@ -80,8 +89,7 @@
         <li>Models built: ARIMA, Exponential Smoothing (ETS), Naive baseline, Drift baseline</li>
         <li>Model selection criteria: MAE and RMSE measured on a held-out test period</li>
         <li>Final model: ARIMA(5,1,2) — selected for lowest error metrics across both measures</li>
-        <li>Output: 12-month forward forecast with 80% and 95% confidence intervals</li>
-        <li>Visualisation: interactive Power BI dashboard built for non-technical stakeholders</li>
+        <li>Output: 12-month forward forecast with 80% and 95% confidence intervals, reported on original dollar scale</li>
       </ul>
     </div>
 
@@ -92,34 +100,35 @@
           <thead>
             <tr>
               <th>Model</th>
-              <th>MAE</th>
               <th>RMSE</th>
+              <th>MAPE</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td>Naive Baseline</td>
-              <td>45.8</td>
-              <td>62.4</td>
+              <td>0.412</td>
+              <td>2.91%</td>
             </tr>
             <tr>
-              <td>Drift Baseline</td>
-              <td>31.2</td>
-              <td>44.7</td>
+              <td>ETS(A,A,N)</td>
+              <td>0.189</td>
+              <td>1.24%</td>
             </tr>
             <tr>
-              <td>ETS</td>
-              <td>24.6</td>
-              <td>33.9</td>
+              <td>Auto ARIMA(4,1,1)</td>
+              <td>0.071</td>
+              <td>0.48%</td>
             </tr>
             <tr>
               <td>ARIMA(5,1,2)<span class="best-badge">Selected</span></td>
-              <td>18.3</td>
-              <td>25.1</td>
+              <td>0.0527</td>
+              <td>0.350%</td>
             </tr>
           </tbody>
         </table>
       </div>
+      <p class="chart-caption">Metrics reported on Box-Cox transformed scale (λ = 0.0228). ARIMA(5,1,2) selected for lowest RMSE and MAPE across all candidate models.</p>
     </div>
 
     <div class="content-section">
@@ -142,8 +151,8 @@
         </div>
         <div class="finding-card animate-on-scroll stagger-4">
           <span class="finding-number">Finding 04</span>
-          <p class="finding-text">Power BI dashboard built for non-technical stakeholders to explore the forecast</p>
-          <p class="finding-subtext">Interactive time-series view with scenario filters</p>
+          <p class="finding-text">Forecast extends to December 2025, projecting PCE at $21,661bn</p>
+          <p class="finding-subtext">95% confidence interval: $20,596bn – $22,781bn</p>
         </div>
       </div>
     </div>
@@ -157,6 +166,14 @@
     </div>
 
     <div class="content-section animate-on-scroll">
+      <h2>Model Comparison</h2>
+      <div class="chart-container">
+        <img src="project3_visuals/forecast comparison.png" alt="Comparison of all forecasting models against actual US PCE data">
+        <p class="chart-caption">Forecast Model Comparison — ARIMA(5,1,2), Auto ARIMA(4,1,1), ETS, and Naive models overlaid against actual PCE data. ARIMA(5,1,2) most closely tracks the actual series across the test period, confirming its selection as the final model.</p>
+      </div>
+    </div>
+
+    <div class="content-section animate-on-scroll">
       <h2>The Data</h2>
       <div class="chart-container">
         <img src="project3_visuals/final forecast.png" alt="ARIMA(5,1,2) 12-month PCE forecast with confidence interval">
@@ -166,7 +183,7 @@
 
     <div class="content-section animate-on-scroll">
       <h2>Business Implications</h2>
-      <p>The final ARIMA(5,1,2) model provides a reliable near-term planning tool for demand forecasting. Businesses in consumer-facing sectors can use PCE forecasts to plan inventory, staffing, and marketing spend 6–12 months in advance with statistically grounded confidence. The Power BI dashboard makes the forecast accessible to non-technical decision-makers without requiring knowledge of the underlying model.</p>
+      <p>The final ARIMA(5,1,2) model provides a reliable near-term planning tool for consumer demand forecasting. Businesses in consumer-facing sectors can use PCE forecasts to plan inventory, staffing, and marketing spend 6–12 months in advance with statistically grounded confidence intervals. The model's strong performance (RMSE = 0.0527 on transformed scale) and clean residual diagnostics confirm it is an appropriate and well-calibrated forecasting tool.</p>
     </div>
 
     <div class="content-section animate-on-scroll">
@@ -199,21 +216,70 @@
     <p class="footer-text">Nishant Gawade · Graduate Data Analyst · Leeds, UK · 2026</p>
   </footer>
 
+  <!-- PREV / NEXT -->
+  <div class="project-nav-strip">
+    <a href="project2.html" class="nav-strip-link">
+      <span class="nav-strip-dir">← Previous</span>
+      <span class="nav-strip-title">ICO Fundraising Success Prediction</span>
+    </a>
+    <a href="project4.html" class="nav-strip-link next">
+      <span class="nav-strip-dir">Next →</span>
+      <span class="nav-strip-title">Hotel Review Text Mining &amp; Sentiment Analysis</span>
+    </a>
+  </div>
+
+  <!-- BACK TO TOP -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="m18 15-6-6-6 6"/>
+    </svg>
+  </button>
+
   <script>
     const html = document.documentElement;
     const themeToggle = document.getElementById('themeToggle');
-    const saved = localStorage.getItem('theme') || 'light';
+    const saved = localStorage.getItem('theme') || 'dark';
     html.setAttribute('data-theme', saved);
+    const themeLabel = document.getElementById('themeLabel');
+    function updateLabel(t) { if (themeLabel) themeLabel.textContent = t === 'dark' ? 'Light' : 'Dark'; }
+    updateLabel(saved);
     themeToggle.addEventListener('click', () => {
       const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
       html.setAttribute('data-theme', next);
       localStorage.setItem('theme', next);
+      updateLabel(next);
     });
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
     }, { threshold: 0.1, rootMargin: '0px 0px -48px 0px' });
     document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+
+    /* ---- Scroll progress bar ---- */
+    const progressBar = document.getElementById('scrollProgress');
+    window.addEventListener('scroll', () => {
+      const total = document.documentElement.scrollHeight - window.innerHeight;
+      progressBar.style.width = (window.scrollY / total * 100) + '%';
+    }, { passive: true });
+
+    /* ---- Back to top ---- */
+    const btt = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+      btt.classList.toggle('visible', window.scrollY / (document.documentElement.scrollHeight - window.innerHeight) > 0.40);
+    }, { passive: true });
+    btt.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+    /* ---- Card tilt ---- */
+    const TILT_MAX = 7;
+    document.querySelectorAll('.finding-card, .segment-card, .theme-card').forEach(card => {
+      card.addEventListener('mousemove', (e) => {
+        const r  = card.getBoundingClientRect();
+        const dx = (e.clientX - r.left - r.width  / 2) / (r.width  / 2);
+        const dy = (e.clientY - r.top  - r.height / 2) / (r.height / 2);
+        card.style.transform = `perspective(900px) rotateX(${-dy * TILT_MAX}deg) rotateY(${dx * TILT_MAX}deg) translateY(-4px)`;
+      });
+      card.addEventListener('mouseleave', () => { card.style.transform = ''; });
+    });
   </script>
 </body>
 </html>
