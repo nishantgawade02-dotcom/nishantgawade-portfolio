@@ -55,8 +55,8 @@
   --page-bg:         #111318;
   --text-1:          #E8ECF0;
   --text-2:          #A8B8C8;
-  --text-3:          #5A6A7A;
-  --text-4:          #2A3444;
+  --text-3:          #8A9BAD;
+  --text-4:          #6A7A8A;
 
   --glass:           rgba(255, 255, 255, 0.04);
   --glass-hover:     rgba(255, 255, 255, 0.08);
@@ -754,6 +754,7 @@ section { scroll-margin-top: var(--nav-height); }
 .exp-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 40px; flex-wrap: wrap; gap: 16px; }
 .exp-role { font-family: 'DM Serif Display', serif; font-size: 30px; letter-spacing: -0.02em; color: var(--text-1); margin-bottom: 6px; }
 .exp-company { font-size: 16px; color: var(--text-3); font-weight: 500; }
+.exp-context { font-size: 13px; color: var(--text-3); font-style: italic; margin-top: 4px; }
 .exp-duration {
   font-size: 13px; font-weight: 600; color: var(--text-3);
   background: var(--tag-bg); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
