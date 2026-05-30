@@ -487,8 +487,7 @@
       const counterObs = new IntersectionObserver((entries) => {
         if (entries[0].isIntersecting && !countersFired) {
           countersFired = true;
-          setTimeout(() => animateCounter(document.getElementById('c-years'), 2.5, 1300, true, ' Yrs'), 0);
-          setTimeout(() => animateCounter(document.getElementById('c-projects'), 4, 900, false, ''), 160);
+          setTimeout(() => animateCounter(document.getElementById('c-projects'), 4, 900, false, ''), 0);
           counterObs.disconnect();
         }
       }, { threshold: 0.5 });

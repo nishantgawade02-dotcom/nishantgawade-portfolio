@@ -4,7 +4,23 @@
       "Bash(open /Users/nishantgawade/Desktop/resume/nishant-gawade-portfolio/index.html)",
       "Bash(ls /Users/nishantgawade/Desktop/resume/nishant-gawade-portfolio/ && ls /Users/nishantgawade/Desktop/resume/)",
       "Read(//Users/nishantgawade/Desktop/resume/**)",
-      "Bash(open /Users/nishantgawade/Desktop/resume/nishant-gawade-portfolio/project4.html)"
+      "Bash(open /Users/nishantgawade/Desktop/resume/nishant-gawade-portfolio/project4.html)",
+      "Bash(gh auth *)",
+      "Bash(git add *)",
+      "Bash(git push *)",
+      "Bash(git -C /Users/nishantgawade/Desktop/resume/nishant-gawade-portfolio add index.html project1.html project2.html project3.html project4.html)",
+      "Bash(git -C /Users/nishantgawade/Desktop/resume/nishant-gawade-portfolio commit -m ' *)",
+      "Bash(git -C /Users/nishantgawade/Desktop/resume/nishant-gawade-portfolio push)",
+      "Bash(git commit -m ' *)",
+      "Bash(python3 *)",
+      "Bash(open http://localhost:8080)",
+      "Bash(lsof *)",
+      "Bash(kill 49648)",
+      "Bash(open \"http://localhost:8080/index.html?v=$\\(date +%s\\)\")",
+      "Bash(open *)",
+      "Bash(pkill -f \"python3 -m http.server\")",
+      "Bash(python3 -m http.server 8080)",
+      "Bash(git commit *)"
     ]
   }
 }
